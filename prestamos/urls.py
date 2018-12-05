@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.IndexView.as_view(), name='prestamos'),
     path('solicitud/', views.SolicitudView.as_view(), name='prestamos_solicitud'),
+    path('solicitud/enviada/', views.SolicitudEnviadaView.as_view(), name='prestamos_solicitud_enviada'),
     path('calculadora/', views.CalculadoraView.as_view(), name='prestamos_calculadora'),
 ]

@@ -28,7 +28,7 @@ IMG_LOGO = STATIC_URL + "base/img/logo1.png"
 IMG_DEFAULT = IMG_LOGO
 IMG_HOME = IMG_DEFAULT
 # Imagenes genéricas:
-
+IMG_GOOD = STATIC_URL + "base/img/good.png"
 # Imagenes de la aplicación 'prestamos':
 IMG_PRESTAMOS = STATIC_URL + "prestamos/img/prestamos.png"
 IMG_PRESTAMOS_CALCULADORA = STATIC_URL + "prestamos/img/calculadora.png"

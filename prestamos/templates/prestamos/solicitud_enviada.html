@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+
+
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+    
+    <div class="padding20px">
+        <div>
+            <p>
+                {% trans "Tu solicitud de préstamo ha sido enviada. <br>Te estaremos contactando lo más prónto posible. <br> <br>¡Gracias! <br>" %}
+            </p>
+            <img style="width: 150px;" src="{{ VAR.IMG_GOOD }}" alt="">
+        </div>
+        
+        <br>
+        <hr class="line2">
+        <br>
+
+        <div class="margin0px center">
+            {% for link in links.GetGroups.prestamos %}
+                <a class="post" href="{{ link.Url }}">
+                    <div>
+                        <img src="{{ link.GetImg }}" alt="">
+                        <h1>{{ link }}</h1>
+                        <p>{{ link.description }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock content %}

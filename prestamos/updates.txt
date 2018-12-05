@@ -1,0 +1,10 @@
+
+
+REGISTRO DE LOS CAMBIOS REALIZADOS
+
+
+
+20181205:
+----------------------------------------
+prestamos: Opcional la introducción de texto en la casilla de comentarios.
+prestamos: Add view solicitud/enviada/
