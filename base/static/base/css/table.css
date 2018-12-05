@@ -1,0 +1,27 @@
+
+
+/*
+Estilos para tablas. -----------------------------------
+*/
+
+
+
+
+
+
+.table1 {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+.table1 td {
+    border: 1px solid lightgrey;
+    padding: 5px;
+    background-color: white;
+}
+
+.table1 th {
+    border: 1px solid lightgray;
+    padding: 5px;
+    background-color: rgb(244, 245, 226);
+}

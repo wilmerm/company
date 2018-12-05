@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+    <div class="margin0px center">
+        {% for link in links.GetNav %}
+            {% if link.Url != request.path %}
+                <a class="post" href="{{ link.Url }}">
+                    <div>
+                        <img src="{{ link.GetImg }}" alt="">
+                        <h1>{{ link }}</h1>
+                        <p>{{ link.description }}</p>
+                    </div>
+                </a>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+    
+{% endblock content %}

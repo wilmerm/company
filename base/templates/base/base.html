@@ -1,0 +1,98 @@
+{% load staticfiles %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<!--
+   Copyright 2018 Wilmer Martínez <www.wilmermartinez.com>
+-->
+
+<head>
+   <meta charset="utf-8" />
+   <title>{{ TITLE }}</title>
+   <link rel="shortcut icon" href="{{ VAR.IMG_LOGO }}">
+
+   <!-- Properties -->
+   <meta name="project_name" content={{ PROJECT_NAME }} />
+   <meta name="project_description" content={{ PROJECT_DESCRIPTION }} />
+   <meta name="project_author" content={{ PROJECT_AUTHOR }} />
+   
+   <link rel="stylesheet" href="{% static 'base/css/base.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/color.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/nav.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/element.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/form.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/size.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/list.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/img.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/table.css' %}" >
+
+   {# Utilizamos el siguiente bloque para incluir otras propiedades o archivos CSS o JS. #}
+   {% block head-extras %}
+   {% endblock head-extras %}
+</head>
+
+<body>
+
+   {# barra de navegación #}
+   <nav id="nav">
+      <ul>
+         {% for link in links.GetNav %}
+            {% if link.Url == request.path %}
+               <li><a class="nav_active" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a></li>
+            {% else %}
+               <li><a href="{{ link.Url }}" placeholder="{{ link.descriptiton }}" title="{{ link.description }}">{{ link }}</a></li>
+            {% endif %}
+         {% endfor %}
+      </ul>
+   </nav>
+
+   <div id="page">
+      <div id="header">
+
+         {# imágen de cabecera #}
+         <img class="img_header" src="{{ VAR.IMG_LOGO }}" alt="{{ TITLE }}">
+         {% block header %}
+         {% endblock header %}
+      </div>
+
+      <div id="content">
+         <div class="subtitle">
+            <img class="subtitleimg" src="{{ subtitleimg }}" alt="">
+            <div class="subtitletexto">{{ subtitle }}</div>
+            
+         </div>
+         <br>
+         {% block content %}
+         {% endblock content %}
+         <br>
+      </div>
+
+      <div id="footer">
+         {% block footer %}
+         {% endblock footer %}
+
+         <div id="credits">
+            {% block credits %}
+            {% endblock credits %}
+            {# créditos, legal, y otras referencias #}
+            <ul class="credits">
+               {% for link in links.GetCredits %}
+                  <li>
+                     <a target="{{ link.target }}" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a>
+                  </li>
+                  <li>
+                     <span>|</span>
+                  </li>
+               {% endfor %}
+            </ul>
+         </div>
+      </div>
+   </div>
+
+
+</body>
+
+</html>
+

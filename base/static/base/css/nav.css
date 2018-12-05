@@ -1,0 +1,47 @@
+/* 
+    Barra de navegación 
+*/
+
+
+#nav {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.212);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    transition-duration: 3s;
+}
+
+#nav:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+
+#nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+#nav li a:hover {
+    background-color: #111;
+}
+
+.nav_active {
+    background-color: goldenrod;
+}
+

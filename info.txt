@@ -1,0 +1,33 @@
+﻿
+Aplicaciones:
+---------------------------------------------------------------------------------------
+
+
+
+fuente:
+
+Es un módulo que contiene un sin número de clases y funciones reutilizables, útiles 
+para todas las aplicaciones. Se exporta en la aplicación 'base' detallada más abajo.
+
+
+
+base: 
+
+La aplicación 'base' es la aplicación que contiene la mayor parte de la configuración
+del proyecto. Las demás aplicaciones dependarán de ella para poder funcionar.
+
+En la aplicación 'base' tendremos una plantilla que mostrará los enlaces a las demás
+aplicaciones del proyecto. Esta plantilla se mostrará en la url base '/' del proyecto. 
+
+
+
+
+
+
+
+
+Dependencias:
+------------------------------------------------------------------------------------------
+Python 3.7
+Django
+Pillow (módulo PIP de Python)

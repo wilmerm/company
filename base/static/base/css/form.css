@@ -1,0 +1,225 @@
+/*
+    Estilo para los formularios.
+
+*/
+
+
+
+
+
+.form1 {
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+    border: 2px dashed gray;
+    border-radius: 10px;
+}
+
+
+
+.form1 label {
+    margin: auto;
+    text-align: center;
+ 
+}
+
+.form1 input[type=text] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+
+}
+
+.form1 input[type=number] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form1 input[type=email] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form1 input[type=checkbox] {
+    height: 25px;
+    width: 25px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form1 input[type=submit] {
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(223, 223, 223);
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+.form1 input[type=submit]:hover {
+    background-color: white;
+}
+
+.form1 textarea {
+    display: block;
+    padding: 10px;
+    min-height: 200px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+
+.form1 .errorlist {
+    list-style: none;
+    display: inline;
+    margin: auto;
+    text-align: center;
+}
+
+
+.form1 .errorlist li {
+    background-color: rgb(255, 236, 131);
+    padding: 7px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* SEGUNDA CLASE DE FORMULARIO
+------------------------------------------------------------------------------------*/
+
+
+.form2 {
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+    border: 2px dashed gray;
+    border-radius: 10px;
+}
+
+
+
+.form2 label {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.form2 input[type=text] {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 95%;
+
+}
+
+.form2 input[type=number] {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 95%;
+}
+
+.form2 input[type=email] {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 95%;
+}
+
+.form2 input[type=checkbox] {
+    height: 25px;
+    width: 25px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form2 input[type=submit] {
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(223, 223, 223);
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+.form2 input[type=submit]:hover {
+    background-color: white;
+}
+
+.form2 textarea {
+    display: block;
+    padding: 10px;
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 95%;
+}
+
+.form2 select {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+
+.form2 .errorlist {
+    list-style: none;
+    display: inline;
+    width: 95%;
+}
+
+
+.form2 .errorlist li {
+    background-color: rgb(255, 236, 131);
+    padding: 7px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+}

@@ -1,0 +1,51 @@
+
+
+
+/*
+    Estilo para definir los colores predeterminados.
+*/
+
+
+
+/* 
+    background colors -----------------------------------
+*/
+
+.bcolor1 {
+    background-color: white;
+}
+
+.bcolor2 {
+    background-color: black;
+}
+
+.bcolor3 {
+    background-color: gray;
+}
+
+.bcolor4 {
+    background-color: antiquewhite;
+}
+
+
+
+
+/* 
+    text colors --------------------------------------------
+*/
+
+.fcolor1 {
+    color: white;
+}
+
+.fcolor2 {
+    color: black;
+}
+
+.fcolor3 {
+    color: gray;
+}
+
+.fcolor4 {
+    color: antiquewhite;
+}

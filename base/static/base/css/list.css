@@ -1,0 +1,19 @@
+
+
+
+
+
+
+ul.credits {
+    list-style-type: none;
+    font-size: small;
+}
+
+ul.credits li {
+    float: left;
+    padding: 5px;
+}
+
+ul.credits a {
+    text-decoration: none;
+}

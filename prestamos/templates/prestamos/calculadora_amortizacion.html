@@ -1,0 +1,84 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+
+
+{% block head-extras %}
+    <script type="text/javascript" src="{% static 'base/js/prestamos.js' %}"></script>
+{% endblock head-extras %}
+
+
+
+{% block header %}
+{% endblock header %}
+    
+
+
+
+{% block content %}
+
+<div style="padding: 20px; width: 500px; float: left">
+
+    <div class="form2">
+        <div id="errores"></div>
+        <div>
+            <label for="monto">¿Cuál es el monto que necesitas?</label>
+            <input type="number" id="monto" placeholder="" required>
+        </div>
+        <div>
+            <label for="cuotas">¿En cuántas cuotas piensas pagarlo?</label>
+            <input type="number" id="cuotas" placeholder="" required>
+        </div>
+        <div>
+            <label for="tasa">Indique la tasa</label>
+            <input type="number" id="tasa" placeholder="" value="{{ conf.GetDict.prestamos_tasa }}" required>
+        </div>
+        <div>
+            <label for="periodo">¿En qué periodo realizará los pagos?</label>
+            <select name="periodo" id="periodo">
+                <option value="diario">Diario</option>
+                <option value="semanal">Semanal</option>
+                <option value="quincenal">Quincenal</option>
+                <option value="mensual" selected>Mensual</option>
+            </select>
+        </div>
+        <div>
+            <hr>
+            <a class="button1" onclick="calcular()">Calcular</a>
+            <a class="button2" href="{% url 'prestamos_solicitud' %}">Solicitar préstamo</a>
+        </div>
+    </div>
+    <small style="color: gray;">
+        <b>Nota:</b>
+        <i>
+        {% trans "Cálculo aproximado de acuerdo a los datos ingresados." %} 
+        {% trans "No se contempló período de gracia." %}
+        {% trans "Los resultados de esta simulación son aproximados, pudiendo variar por razones comerciales o fiscales no contempladas en la misma." %}
+        {% trans "En caso de ser un Préstamo Hipotecario, la cuota mensual aumentaría producto de la cuota mensual del Seguro de vida y de Propiedad, las cuales no incluimos en el cálculo." %}
+        </i>
+    </small>
+</div>
+
+{# tabla de amortización #}
+<div style="padding: 20px; display: inline; width: 700px; float: left">
+    <div class="bcolor4" id="div_comentario" style="padding: 20px; width: 84%;"></div>
+    <br>
+    <table class="table1" style="width: 90%; text-align: right">
+        <tbody>
+            <tr>
+                <th>{% trans "Número" %}</th>
+                <th>{% trans "Interés" %}</th>
+                <th>{% trans "Abono al capital" %}</th>
+                <th>{% trans "Valor de la cuota" %}</th>
+                <th>{% trans "Saldo al capital" %}</th>
+            </tr>
+        </tbody>
+        <tbody id="tbody_1"></tbody>
+    </table>
+</div>
+<br style="clear: left">
+
+
+{% endblock content %}

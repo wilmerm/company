@@ -1,0 +1,393 @@
+
+
+
+
+/*
+    Estilo para los diferentes tamaños de los elementos.
+
+    - width (en porcetajes).
+    - height (en porcentajes).
+    - width (en pixeles).
+    - height (en pixeles).
+    - margin
+    - padding
+    - posiciones (left, center, right, top, botton)
+*/
+
+
+
+
+.widthauto {
+    width: auto;
+}
+
+.heightauto {
+    height: auto;
+}
+
+
+
+/*
+    Tamaños por porcentajes.
+*/
+
+
+.width10 {
+    width: 10%;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.width30 {
+    width: 30%;
+}
+
+.width40 {
+    width: 40%;
+}
+
+.width50 {
+    width: 50%;
+}
+
+.width60 {
+    width: 60%;
+}
+
+.width70 {
+    width: 70%;
+}
+
+.width80 {
+    width: 80%;
+}
+
+.width90 {
+    width: 90%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+
+
+
+
+
+.height10 {
+    height: 10%;
+}
+
+.height20 {
+    height: 20%;
+}
+
+.height30 {
+    height: 30%;
+}
+
+.height40 {
+    height: 40%;
+}
+
+.height50 {
+    height: 50%;
+}
+
+.height60 {
+    height: 60%;
+}
+
+.height70 {
+    height: 70%;
+}
+
+.height80 {
+    height: 80%;
+}
+
+.height90 {
+    height: 90%;
+}
+
+.height100 {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/*
+    Tamaños por pixeles exactos.
+*/
+
+.width0px {
+    width: 0px;
+}
+
+.width50px {
+    width: 50px;
+}
+
+.width100px {
+    width: 100px;
+}
+
+.width150px {
+    width: 150px;
+}
+
+.width200px {
+    width: 200px;
+}
+
+.width250px {
+    width: 250px;
+}
+
+.width300px {
+    width: 300px;
+}
+
+.width350px {
+    width: 350px;
+}
+
+.width400px {
+    width: 400px;
+}
+
+.width450px {
+    width: 450px;
+}
+
+.width500px {
+    width: 500px;
+}
+
+.width550px {
+    width: 550px;
+}
+
+.width600px {
+    width: 600px;
+}
+
+.width650px {
+    width: 650px;
+}
+
+.width700px {
+    width: 700px;
+}
+
+.width450px {
+    width: 450px;
+}
+
+.width500px {
+    width: 500px;
+}
+
+.width850px {
+    width: 850px;
+}
+
+.width900px {
+    width: 900px;
+}
+
+.width950px {
+    width: 950px;
+}
+
+.width1000px {
+    width: 1000px;
+}
+
+
+
+
+
+
+.height0px {
+    height: 0px;
+}
+
+.height50px {
+    height: 50px;
+}
+
+.height150px {
+    height: 150px;
+}
+
+.height200px {
+    height: 200px;
+}
+
+.height250px {
+    height: 250px;
+}
+
+.height300px {
+    height: 300px;
+}
+
+.height350px {
+    height: 350px;
+}
+
+.height400px {
+    height: 400px;
+}
+
+.height450px {
+    height: 450px;
+}
+
+.height500px {
+    height: 500px;
+}
+
+.height550px {
+    height: 550px;
+}
+
+.height600px {
+    height: 600px;
+}
+
+.height650px {
+    height: 650px;
+}
+
+.height700px {
+    height: 700px;
+}
+
+.height750px {
+    height: 750px;
+}
+
+.height800px {
+    height: 800px;
+}
+
+.height850px {
+    height: 850px;
+}
+
+.height900px {
+    height: 900px;
+}
+
+.height950px {
+    height: 950px;
+}
+
+.height1000px {
+    height: 1000px;
+}
+
+
+
+
+
+
+
+/*
+    Espacios
+*/
+
+
+.margin5px {
+    margin: 5px;
+}
+
+.margin10px {
+    margin: 10px;
+}
+
+.margin15px {
+    margin: 15px;
+}
+
+.margin20px {
+    margin: 20px;
+}
+
+.margin25px {
+    margin: 25px;
+}
+
+.margin30px {
+    margin: 30px;
+}
+
+
+
+
+
+.padding5px {
+    padding: 5px;
+}
+
+.padding10px {
+    padding: 10px;
+}
+
+.padding15px {
+    padding: 15px;
+}
+
+.padding20px {
+    padding: 20px;
+}
+
+.padding25px {
+    padding: 25px;
+}
+
+.padding30px {
+    padding: 30px;
+}
+
+
+
+
+
+
+
+/*
+    Posiciones
+*/
+
+
+.left {
+    text-align: left;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.top {
+    vertical-align: top;
+}
+
+.bottom {
+    vertical-align: bottom;
+}
