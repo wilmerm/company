@@ -1,0 +1,119 @@
+{% load staticfiles %}
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<!--
+   Copyright 2018 Wilmer Martínez <www.wilmermartinez.com>
+
+   plantilla para dispositivos moviles.
+-->
+
+<head>
+   <meta charset="utf-8" />
+   <title>{{ TITLE }}</title>
+   <link rel="shortcut icon" href="{{ VAR.IMG_LOGO }}">
+
+   <!-- Properties -->
+   <meta name="project_name" content={{ PROJECT_NAME }} />
+   <meta name="project_description" content={{ PROJECT_DESCRIPTION }} />
+   <meta name="project_author" content={{ PROJECT_AUTHOR }} />
+   
+   <link rel="stylesheet" href="{% static 'base/css/mobile/base.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/color.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/line.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/nav.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/element.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/form.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/size.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/list.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/img.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/mobile/table.css' %}" >
+
+   {# Utilizamos el siguiente bloque para incluir otras propiedades o archivos CSS o JS. #}
+   {% block head-extras %}
+   {% endblock head-extras %}
+</head>
+
+<body>
+
+   
+
+   <div id="page">
+      <div id="header">
+            {# barra de navegación #}
+            <nav id="nav">
+               <div id="nav_button" style="padding: 20px">
+                  <img id="nav_show" onclick="shownav()" style="height: 100px; width: 100px; cursor: pointer" src="{{ VAR.IMG_MENU }}" alt="">
+                  <img class="img_header" src="{{ VAR.IMG_LOGO }}" alt="{{ TITLE }}">
+                  <ul id="nav_ul" style="display: none">
+                     {% for link in links.GetNav %}
+                        {% if link.Url == request.path %}
+                           <li><a class="nav_active" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a></li>
+                        {% else %}
+                           <li><a href="{{ link.Url }}" placeholder="{{ link.descriptiton }}" title="{{ link.description }}">{{ link }}</a></li>
+                        {% endif %}
+                     {% endfor %}
+                  </ul>
+               </div>
+            </nav>
+
+         <script>
+            function shownav() {
+               var btn = document.getElementById("nav_show"); 
+               var ul = document.getElementById("nav_ul");
+               if (ul.style.display == "none") {
+                  ul.style.display = "block";
+               }
+               else {
+                  ul.style.display = "none";
+               }
+            }
+         </script>
+
+         {% block header %}
+         {% endblock header %}
+      </div>
+
+         
+
+      <div id="content">
+         <div class="subtitle">
+            <img class="subtitleimg" src="{{ subtitleimg }}" alt="">
+            <div class="subtitletexto">{{ subtitle }}</div>
+            
+         </div>
+         <br>
+         {% block content %}
+         {% endblock content %}
+         <br>
+      </div>
+
+      <div id="footer">
+         {% block footer %}
+         {% endblock footer %}
+
+         <div id="credits">
+            {% block credits %}
+            {% endblock credits %}
+            {# créditos, legal, y otras referencias #}
+            <ul class="credits">
+               {% for link in links.GetCredits %}
+                  <li>
+                     <a target="{{ link.target }}" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a>
+                  </li>
+                  <li>
+                     <span>|</span>
+                  </li>
+               {% endfor %}
+            </ul>
+         </div>
+      </div>
+   </div>
+
+
+</body>
+
+</html>
+

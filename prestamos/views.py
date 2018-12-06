@@ -11,6 +11,7 @@ from base.links import links
 from base.models import Configuration
 from fuente.base import Texto, Numero, Fecha
 from fuente.email import Email
+from fuente import mobile
 from .models import *
 from .forms import *
 
@@ -19,6 +20,8 @@ CONTEXT = {}
 CONTEXT.update(VAR)
 CONTEXT["links"] = links
 CONTEXT["conf"] = Configuration()
+
+
 
 
 
@@ -32,7 +35,11 @@ class IndexView(TemplateView):
         context["subtitle"] = _("Préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS
         return context
-    
+
+    def dispatch(self, request):
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)
+
 
 
 
@@ -53,6 +60,10 @@ class SolicitudView(FormView):
         # It should return an HttpResponse.
         return super().form_valid(form)
 
+    def dispatch(self, request):
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)
+
     
 
 
@@ -66,6 +77,9 @@ class SolicitudEnviadaView(TemplateView):
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
         return context
 
+    def dispatch(self, request):
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)
 
 
 
@@ -78,3 +92,8 @@ class CalculadoraView(TemplateView):
         context["subtitle"] = _("Calculadora de préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS_CALCULADORA
         return context
+
+    def dispatch(self, request):
+        # Detecta si es un dispositivo mobil y obtiene la ruta de la plantilla 
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)

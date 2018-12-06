@@ -1,0 +1,91 @@
+
+/*
+    Estilo para la estructura de la plantilla.
+
+    Aquí se organiza y se configuran las partes principales del HTML,
+    indicadas con sus respectivos ids.
+
+    body
+        #page
+            #header
+            #content
+            #footer
+                #credits
+*/
+
+
+
+@font-face{
+    font-family: Sgl;
+    src: url("sgl.ttf");
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+
+
+
+
+
+body {
+    font-family: Sgl, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background: lightgray;
+    font-size: 30px;
+}
+
+
+
+#page {
+    min-height: 800px;
+    background: white;
+}
+
+
+
+#header {
+
+}
+
+
+
+#content {
+    background: white;
+    min-height: 500px;
+}
+
+
+
+#footer {
+    min-height: 150px;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+
+
+#credits {
+    
+
+}
+
+
+
+.subtitle {
+    background-color: rgb(240, 240, 240);
+    height: 80px;
+}
+
+.subtitletexto {
+    font-size: 40px;
+    color: black;
+    float: left;
+    padding: 10px;
+}
+
+.subtitleimg {
+    height: 100%;
+    float: left;
+}

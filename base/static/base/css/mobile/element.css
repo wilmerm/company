@@ -1,0 +1,183 @@
+
+
+
+/* 
+    Estilo para crear algunos elementos de visualización como:
+
+        - Cuadro de texto. (notes).
+        - links (buttons).
+
+*/
+
+
+
+/* 
+    Un cuadro de texto. estas notas se aplican a las etiquetas 'div', para darle
+    una apariencia de stick note.
+*/
+
+div.note1 {
+    background-color: rgb(255, 214, 163);
+    color: rgb(51, 51, 51);
+    border: 2px solid rgb(255, 188, 107);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+div.note2 {
+    background-color: rgb(255, 214, 163);
+    color: rgb(51, 51, 51);
+    border: 2px dashed rgb(255, 188, 107);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+div.note3 {
+    background-color: rgb(153, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+div.note4 {
+    background-color: rgb(255, 214, 163);
+    color: rgb(255, 0, 0);
+    border: 2px dashed rgb(255, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+div.note5 {
+    background-color: white;
+    color: rgb(255, 0, 0);
+    border: 2px dashed rgb(255, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+div.note6 {
+    background-color: white;
+    color: rgb(56, 56, 56);
+    border: 2px dashed rgb(116, 116, 116);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+/* 
+    Los siguietes estilos se aplican a los enlaces 'a'.
+*/
+
+
+.button1 {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    transition-duration: 0.5s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: rgb(221, 221, 221);
+    border-color: white;
+}
+
+.button2 {
+    padding: 15px;
+    background-color: rgb(255, 223, 137);
+    border: 1px solid rgb(255, 198, 42);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    transition-duration: 0.5s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: rgb(255, 244, 221);
+    border-color: rgb(255, 227, 135);
+}
+
+.button3 {
+    padding: 15px;
+    background-color: rgb(109, 0, 0);
+    border: 1px solid rgb(68, 0, 0);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.5s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button3:hover {
+    background-color: rgb(194, 0, 0);
+    border-color: rgb(151, 0, 0);
+}
+
+
+
+a.link {
+    color: rgb(43, 43, 43);
+    cursor: pointer;
+}
+
+a.link:hover {
+    color: black;
+}
+
+
+/* Enlace que se muestra en forma de fichas muy visibles,
+tienen una imagen, un titulo, y una descripción.
+*/
+
+a.post {
+    padding: 15px;
+    background-color: white;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    transition-duration: 0.5s;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+a.post:hover {
+    background-color: rgb(221, 221, 221);
+    border-color: white;
+}
+
+a.post div {
+    min-height: 400px;
+    width: 90%;
+
+}
+
+a.post img {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}

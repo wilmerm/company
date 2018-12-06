@@ -19,58 +19,58 @@
 .form1 label {
     margin: auto;
     text-align: center;
+    font-size: 30px;
  
 }
 
-
 .form1 input[type=text] {
-    display: block;
     padding: 10px;
-    width: 90%;
+    width: 98%;
     margin: auto;
     text-align: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 
 }
 
 .form1 input[type=number] {
-    display: block;
     padding: 10px;
-    width: 90%;
+    width: 98%;
     margin: auto;
     text-align: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 .form1 input[type=email] {
-    display: block;
     padding: 10px;
-    width: 90%;
+    width: 98%;
     margin: auto;
     text-align: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 .form1 input[type=checkbox] {
-    height: 25px;
-    width: 25px;
+    height: 50px;
+    width: 50px;
     padding: 20px;
     margin: auto;
     text-align: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 .form1 input[type=submit] {
-    padding: 15px;
-    display: block;
+    padding: 20px;
     cursor: pointer;
     margin: auto;
     text-align: center;
@@ -78,6 +78,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     transition-duration: 0.5s;
+    font-size: 30px;
 }
 
 .form1 input[type=submit]:hover {
@@ -85,15 +86,15 @@
 }
 
 .form1 textarea {
-    display: block;
     padding: 10px;
     min-height: 200px;
-    width: 90%;
+    width: 98%;
     margin: auto;
     text-align: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 
@@ -112,6 +113,7 @@
     border-radius: 3px;
     margin: auto;
     text-align: center;
+    font-size: 30px;
 }
 
 
@@ -130,6 +132,7 @@
     background-color: rgb(243, 240, 240);
     border: 2px dashed gray;
     border-radius: 10px;
+    width: 95%;
 }
 
 
@@ -138,6 +141,7 @@
     display: block;
     padding-top: 15px;
     padding-bottom: 5px;
+    font-size: 30px;
 }
 
 .form2 input[type=text] {
@@ -147,6 +151,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
+    font-size: 30px;
 
 }
 
@@ -157,6 +162,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
+    font-size: 30px;
 }
 
 .form2 input[type=email] {
@@ -175,10 +181,11 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 .form2 input[type=submit] {
-    padding: 15px;
+    padding: 20px;
     display: block;
     cursor: pointer;
     text-align: center;
@@ -186,6 +193,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     transition-duration: 0.5s;
+    font-size: 30px;
 }
 
 .form2 input[type=submit]:hover {
@@ -200,6 +208,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
+    font-size: 30px;
 }
 
 .form2 select {
@@ -208,6 +217,7 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    font-size: 30px;
 }
 
 
@@ -223,4 +233,5 @@
     padding: 7px;
     border: 1px solid rgb(223, 223, 223);
     border-radius: 3px;
+    font-size: 30px;
 }

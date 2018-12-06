@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %}
+{% extends 'base/mobile/base.html' %}
 {% load staticfiles %}
 {% load i18n %}
 
@@ -19,7 +19,7 @@
 
 {% block content %}
 
-<div style="padding: 20px; width: 500px; float: left">
+<div style="padding: 20px; width: 95%;">
 
     <div class="form2">
         <div id="errores"></div>
@@ -61,16 +61,16 @@
 </div>
 
 {# tabla de amortización #}
-<div style="padding: 20px; display: inline; width: 700px; float: left">
-    <div class="bcolor4" id="div_comentario" style="padding: 20px; width: 84%;"></div>
+<div style="padding: 20px; width: 100%;">
+    <div class="bcolor4" id="div_comentario" style="padding: 20px; width: 92%;"></div>
     <br>
-    <table class="table1" style="width: 90%; text-align: right">
+    <table class="table1" style="width: 95%; text-align: right">
         <tbody>
             <tr>
                 <th>{% trans "Número" %}</th>
                 <th>{% trans "Interés" %}</th>
                 <th>{% trans "Abono al capital" %}</th>
-                <th>{% trans "Valor de la cuota" %}</th>
+                <th>{% trans "Valor de cuota" %}</th>
                 <th>{% trans "Saldo al capital" %}</th>
             </tr>
         </tbody>

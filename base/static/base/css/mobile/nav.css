@@ -1,0 +1,44 @@
+/* 
+    Barra de navegación 
+*/
+
+
+#nav {
+    transition-duration: 3s;
+}
+
+#nav:hover {
+
+}
+
+
+#nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+    background-color: gray;
+}
+
+#nav li {
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+#nav li a:hover {
+    background-color: #111;
+}
+
+.nav_active {
+    background-color: goldenrod;
+}
+
+
+
