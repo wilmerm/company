@@ -23,28 +23,28 @@
    <meta name="description" content="{{ DESCRIPTION }}" />
    <meta name="keywords" content="{{ KEYWORDS }}" />
    <!-- Twitter Card data -->
-   <meta name="twitter:card" content="summary">
-   <meta name="twitter:title" content="{{ TITLE }}">
-   <meta name="twitter:description" content="{{ DESCRIPTION }}">
-   <meta name="twitter:image" content="{{ IMAGE }}"><!-- Las imágenes de sumario de Twitter deben ser de al menos 200x200px -->
+   <meta name="twitter:card" content="summary" />
+   <meta name="twitter:title" content="{{ TITLE }}" />
+   <meta name="twitter:description" content="{{ DESCRIPTION }}" />
+   <meta name="twitter:image" content="{{ request.get_host }}{{ IMAGE }}" /><!-- Las imágenes de sumario de Twitter deben ser de al menos 200x200px -->
    <!-- Open Graph data -->
    <meta property="og:title" content="{{ TITLE }}" />
    <meta property="og:type" content="article" />
    <meta property="og:url" content="{{ request.get_host }}{{ request.path }}" />
-   <meta property="og:image" content="{{ IMAGE }}" />
+   <meta property="og:image" content="{{ request.get_host }}{{ IMAGE }}" />
    <meta property="og:description" content="{{ DESCRIPTION }}" />
    <meta property="og:site_name" content="{{ VAR.WEB_NAME }}" />
    <!-- CSS -->
-   <link rel="stylesheet" href="{% static 'base/css/base.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/color.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/line.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/nav.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/element.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/form.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/size.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/list.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/img.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/table.css' %}" >
+   <link rel="stylesheet" href="{% static 'base/css/base.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/color.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/line.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/nav.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/element.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/form.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/size.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/list.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/img.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/table.css' %}" />
 
    {# Utilizamos el siguiente bloque para incluir otras propiedades o archivos CSS o JS. #}
    {% block head-extras %}

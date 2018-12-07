@@ -15,21 +15,38 @@
    <title>{{ TITLE }}</title>
    <link rel="shortcut icon" href="{{ VAR.IMG_LOGO }}">
 
-   <!-- Properties -->
+   <!-- Properties (Project) -->
    <meta name="project_name" content={{ PROJECT_NAME }} />
    <meta name="project_description" content={{ PROJECT_DESCRIPTION }} />
    <meta name="project_author" content={{ PROJECT_AUTHOR }} />
-   
-   <link rel="stylesheet" href="{% static 'base/css/mobile/base.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/color.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/line.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/nav.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/element.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/form.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/size.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/list.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/img.css' %}" >
-   <link rel="stylesheet" href="{% static 'base/css/mobile/table.css' %}" >
+   <!-- SEO metaetiquetas -->
+   <meta name="author" content="{{ PROJECT_AUTHOR }}" />
+   <meta name="title" content="{{ TITLE }}" />
+   <meta name="description" content="{{ DESCRIPTION }}" />
+   <meta name="keywords" content="{{ KEYWORDS }}" />
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary" />
+   <meta name="twitter:title" content="{{ TITLE }}" />
+   <meta name="twitter:description" content="{{ DESCRIPTION }}" />
+   <meta name="twitter:image" content="{{ request.get_host }}{{ IMAGE }}" /><!-- Las imágenes de sumario de Twitter deben ser de al menos 200x200px -->
+   <!-- Open Graph data -->
+   <meta property="og:title" content="{{ TITLE }}" />
+   <meta property="og:type" content="article" />
+   <meta property="og:url" content="{{ request.get_host }}{{ request.path }}" />
+   <meta property="og:image" content="{{ request.get_host }}{{ IMAGE }}" />
+   <meta property="og:description" content="{{ DESCRIPTION }}" />
+   <meta property="og:site_name" content="{{ VAR.WEB_NAME }}" />
+   <!-- CSS -->
+   <link rel="stylesheet" href="{% static 'base/css/mobile/base.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/color.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/line.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/nav.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/element.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/form.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/size.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/list.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/img.css' %}" />
+   <link rel="stylesheet" href="{% static 'base/css/mobile/table.css' %}" />
 
    {# Utilizamos el siguiente bloque para incluir otras propiedades o archivos CSS o JS. #}
    {% block head-extras %}

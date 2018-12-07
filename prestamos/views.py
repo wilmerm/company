@@ -35,6 +35,7 @@ class IndexView(TemplateView):
         context["subtitle"] = _("Préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS
         context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = "prestamos,personales,hipotecarios"
         return context
 
     def dispatch(self, request):
@@ -55,6 +56,7 @@ class SolicitudView(FormView):
         context["subtitle"] = _("Solicitar préstamo")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
         context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = "prestamos,solicitud,solicitar"
         return context
 
     def form_valid(self, form):
@@ -78,6 +80,7 @@ class SolicitudEnviadaView(TemplateView):
         context["subtitle"] = _("¡Solicitud enviada!")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
         context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = ""
         return context
 
     def dispatch(self, request):
@@ -95,6 +98,7 @@ class CalculadoraView(TemplateView):
         context["subtitle"] = _("Calculadora de préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS_CALCULADORA
         context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = "prestamos,calculadora,amortizacion,tasa,cuota,pagos"
         return context
 
     def dispatch(self, request):
