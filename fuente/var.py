@@ -38,6 +38,16 @@ DESCRIPTION = "{} {}. {}".format(_("Sitio web de "), COMPANY_NAME, COMPANY_DESCR
 
 
 
+# Propiedades para SEO
+FACEBOOK_APP_ID = "1884552708497884"
+
+
+
+
+
+
+
+
 
 
 # PERSONAS -----------------------------------------------------------
