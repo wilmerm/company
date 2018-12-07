@@ -20,7 +20,7 @@ CONTEXT = {}
 CONTEXT.update(VAR)
 CONTEXT["links"] = links
 CONTEXT["conf"] = Configuration()
-
+CONTEXT["IMAGE"] = IMG_LOGO 
 
 
 
@@ -34,6 +34,7 @@ class IndexView(TemplateView):
         context.update(CONTEXT)
         context["subtitle"] = _("Préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS
+        context["IMAGE"] = context["subtitleimg"]
         return context
 
     def dispatch(self, request):
@@ -53,6 +54,7 @@ class SolicitudView(FormView):
         context.update(CONTEXT)
         context["subtitle"] = _("Solicitar préstamo")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
+        context["IMAGE"] = context["subtitleimg"]
         return context
 
     def form_valid(self, form):
@@ -75,6 +77,7 @@ class SolicitudEnviadaView(TemplateView):
         context.update(CONTEXT)
         context["subtitle"] = _("¡Solicitud enviada!")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
+        context["IMAGE"] = context["subtitleimg"]
         return context
 
     def dispatch(self, request):
@@ -91,6 +94,7 @@ class CalculadoraView(TemplateView):
         context.update(CONTEXT)
         context["subtitle"] = _("Calculadora de préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS_CALCULADORA
+        context["IMAGE"] = context["subtitleimg"]
         return context
 
     def dispatch(self, request):

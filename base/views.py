@@ -16,6 +16,7 @@ CONTEXT = {}
 CONTEXT.update(VAR)
 CONTEXT["links"] = links
 CONTEXT["conf"] = Configuration()
+CONTEXT["IMAGE"] = IMG_LOGO
 
 
 

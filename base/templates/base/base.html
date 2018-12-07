@@ -13,11 +13,28 @@
    <title>{{ TITLE }}</title>
    <link rel="shortcut icon" href="{{ VAR.IMG_LOGO }}">
 
-   <!-- Properties -->
+   <!-- Properties (Project) -->
    <meta name="project_name" content={{ PROJECT_NAME }} />
    <meta name="project_description" content={{ PROJECT_DESCRIPTION }} />
    <meta name="project_author" content={{ PROJECT_AUTHOR }} />
-   
+   <!-- SEO metaetiquetas -->
+   <meta name="author" content="{{ PROJECT_AUTHOR }}" />
+   <meta name="title" content="{{ TITLE }}" />
+   <meta name="description" content="{{ DESCRIPTION }}" />
+   <meta name="keywords" content="{{ KEYWORDS }}" />
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:title" content="{{ TITLE }}">
+   <meta name="twitter:description" content="{{ DESCRIPTION }}">
+   <meta name="twitter:image" content="{{ IMAGE }}"><!-- Las imágenes de sumario de Twitter deben ser de al menos 200x200px -->
+   <!-- Open Graph data -->
+   <meta property="og:title" content="{{ TITLE }}" />
+   <meta property="og:type" content="article" />
+   <meta property="og:url" content="{{ request.get_host }}{{ request.path }}" />
+   <meta property="og:image" content="{{ IMAGE }}" />
+   <meta property="og:description" content="{{ DESCRIPTION }}" />
+   <meta property="og:site_name" content="{{ VAR.WEB_NAME }}" />
+   <!-- CSS -->
    <link rel="stylesheet" href="{% static 'base/css/base.css' %}" >
    <link rel="stylesheet" href="{% static 'base/css/color.css' %}" >
    <link rel="stylesheet" href="{% static 'base/css/line.css' %}" >

@@ -115,7 +115,8 @@ class Links(dict):
 index = Link(id="index", name=_("Inicio"), view="index", img=IMG_HOME, description=_("Página principal."))
 prestamos = Link(id="prestamos", name=_("Préstamos"), view="prestamos", img=IMG_PRESTAMOS, description=_("Gestión de préstamos."))
 # Créditos:
-author = Link(id="author", name="{}: {}".format(_("Creado por"), PROJECT_AUTHOR), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creado por {}".format(PROJECT_AUTHOR)), target="_blank")
+author = Link(id="author", name="{}: {}".format(_("Creado por"), PROJECT_AUTHOR), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
+author_email = Link(id="author_email", name="{} | {}".format(PROJECT_AUTHOR_EMAIL, PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 politica_de_privacidad = Link(id="politica_de_privacidad", name=_("Política de privacidad"), group=CREDITS, view="politica_de_privacidad", description=_("Vea nuestra política de privacidad"), target="_blank")
 # App 'prestamos':
 prestamos_solicitud = Link(id="prestamos_solicitud", name=_("Solicitar préstamo"), group="prestamos", view="prestamos_solicitud", img=IMG_PRESTAMOS_SOLICITUD, description=_("¡Solicite su préstamo personal ahora mismo!"))
@@ -128,7 +129,7 @@ prestamos_calculadora = Link(id="prestamos_calculadora", name=_("Calculadora de 
 
 # Añadimos los enlaces al diccionario:
 links = Links()
-links.Add(index, prestamos, author, politica_de_privacidad, prestamos_solicitud, prestamos_calculadora)
+links.Add(index, prestamos, author, author_email, politica_de_privacidad, prestamos_solicitud, prestamos_calculadora)
 
 
 

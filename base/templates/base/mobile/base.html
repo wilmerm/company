@@ -101,10 +101,11 @@
             <ul class="credits">
                {% for link in links.GetCredits %}
                   <li>
-                     <a target="{{ link.target }}" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a>
-                  </li>
-                  <li>
-                     <span>|</span>
+                     {% if link.Url %}
+                        <a target="{{ link.target }}" href="{{ link.Url }}" title="{{ link.description }}">{{ link }}</a>
+                     {% else %}
+                        <a target="{{ link.target }}" title="{{ link.description }}">{{ link }}</a>
+                     {% endif %}
                   </li>
                {% endfor %}
             </ul>
