@@ -163,6 +163,7 @@ a.post {
     transition-duration: 0.5s;
     display: inline-flex;
     cursor: pointer;
+    margin: auto;
 }
 
 a.post:hover {
@@ -172,7 +173,7 @@ a.post:hover {
 
 a.post div {
     min-height: 400px;
-    width: 90%;
+    width: 100%;
 
 }
 
@@ -180,4 +181,23 @@ a.post img {
     width: 90%;
     height: auto;
     margin: auto;
+}
+
+
+
+/*
+    Publicaciones. ----------------------
+*/
+
+.post_detail {
+    width: 100%;
+}
+
+.post_detail img {
+    width: 100%;
+}
+
+.post_detail p {
+    padding: 20px;
+    font-size: large;
 }

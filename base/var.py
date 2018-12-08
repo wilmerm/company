@@ -12,6 +12,7 @@ from fuente.var import * # También se importa el diccionario 'VAR'.
 # Agrege las aplicaciones instaladas (solo las nuestras) ----------------------------------
 APLICATIONS = (
     ("prestamos", _("Préstamos")),
+    ("tienda", _("Tienda")),
 )
 
 
@@ -30,13 +31,14 @@ IMG_HOME = IMG_DEFAULT
 # Imagenes genéricas:
 IMG_GOOD = STATIC_URL + "base/img/good.png"
 IMG_MENU = STATIC_URL + "base/img/menu.png"
-# Imagenes de la aplicación 'prestamos':
+# Imágenes de la aplicación 'prestamos':
 IMG_PRESTAMOS = STATIC_URL + "prestamos/img/prestamos.png"
 IMG_PRESTAMOS_CALCULADORA = STATIC_URL + "prestamos/img/calculadora.png"
 IMG_PRESTAMOS_DINERO = STATIC_URL + "prestamos/img/dinero.png"
 IMG_PRESTAMOS_SOLICITUD = STATIC_URL + "prestamos/img/solicitud.png"
-
-
+# Imágenes de la aplicación 'tienda':
+IMG_TIENDA = STATIC_URL + "tienda/img/tienda.png"
+IMG_TIENDA_POST = STATIC_URL + "tienda/img/articulo.png"
 
 
 

@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+    <div class="margin0px">
+      <div class="post_detail">
+        <img src="{{ object.GetImg }}" alt="">
+        <p>{{ object.description }}</p>
+      </div>
+    </div>
+        
+
+
+{% endblock content %}

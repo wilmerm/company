@@ -171,13 +171,33 @@ a.post:hover {
 }
 
 a.post div {
-    min-height: 400px;
+    height: 500px;
     width: 300px;
 
 }
 
 a.post img {
-    height: 200px;
-    width: 200px;
+
+    width: 300px;
     margin: auto;
+}
+
+
+
+
+/*
+    Publicaciones. ----------------------
+*/
+
+.post_detail {
+    width: 100%;
+}
+
+.post_detail img {
+    width: 100%;
+}
+
+.post_detail p {
+    padding: 20px;
+    font-size: large;
 }

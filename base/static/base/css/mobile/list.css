@@ -4,15 +4,14 @@
 
 
 
-ul.credits {
+.creditos {
     list-style-type: none;
-    font-size: 30px;
 }
 
-ul.credits li {
+.creditos li {
     padding: 5px;
 }
 
-ul.credits a {
+.creditos a {
     text-decoration: none;
 }
