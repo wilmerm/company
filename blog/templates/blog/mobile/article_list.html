@@ -1,0 +1,32 @@
+{% extends 'base/mobile/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+    <div style="padding: 20px">
+        {% for obj in object_list %}
+        <a class="button1" href="{{ obj.GetUrl }}">
+            <div style="width: 100%">
+                <img src="{{ obj.GetImg }}" style="width: 100%; max-height: 400px" alt="">
+                <b>{{ obj.title }}</b>
+                <p>{{ obj.description | truncatechars:100 }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+        
+
+
+{% endblock content %}

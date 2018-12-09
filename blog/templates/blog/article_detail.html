@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+
+    <div style="padding: 10px; width: 97%;">
+        <table style="border-collapse: collapse; width: 100%">
+            <tbody>
+                <tr>
+                    <td style="width: auto; padding: 20px; padding-top: 0px; vertical-align: top">
+                        {% if object.img %}
+                            <img src="{{ object.GetImg }}" alt="" style="width: 100%">
+                            <br><br>
+                        {% endif %}
+                        <div>{{ object.content | safe }}</div>
+                    </td>
+                    <td style="width: 400px; padding: 20px; background-color: rgb(255, 249, 233); vertical-align: top">
+                        <div>
+                            {{ object.visitas }} {% trans "visitas." %}
+                        </div>
+                        <div>
+                            <h3>{% trans "Entradas populares" %}</h3>
+                            {% for obj in object.GetArticulosPopulares %}
+                            <a class="button1" href="{{ obj.GetUrl }}">
+                                <div>
+                                    <img src="{{ obj.GetImg }}" style="width: 100%; max-height: 200px" alt="">
+                                    <b>{{ obj.title }}</b>
+                                    <p>{{ obj.description | truncatechars:100 }}</p>
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+
+{% endblock content %}

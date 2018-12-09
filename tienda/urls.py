@@ -21,4 +21,5 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='tienda'),
     path('post', views.PostListView.as_view(), name="tienda_post_list"),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='tienda_post_detail'),
+    path('post/<slug:slug>/', views.PostDetailView.as_view(), name='tienda_post_detail'),
 ]

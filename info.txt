@@ -21,7 +21,16 @@ aplicaciones del proyecto. Esta plantilla se mostrará en la url base '/' del pr
 
 
 
+tienda:
 
+La aplicación 'tienda' maneja una especie de tienda en linea, en la que se publican 
+articulos de venta con precio, descripción, especificaciones, ...
+
+
+
+blog:
+
+La aplicación 'blog' maneja un blog.
 
 
 

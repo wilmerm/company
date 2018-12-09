@@ -25,3 +25,46 @@ Estilos para tablas. -----------------------------------
     padding: 5px;
     background-color: rgb(244, 245, 226);
 }
+
+
+
+
+
+
+
+
+
+.post_list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.post_list tr {
+    height: 50px;
+    background-color: rgb(243, 243, 243);
+}
+
+.post_list td {
+    padding: 10px;
+}
+
+.post_list_title {
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+}
+
+.post_list_img {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(243, 243, 243);
+}
+
+.post_list_img img {
+    height: 100%;
+
+}
+
+.post_list_text {
+}
+
+

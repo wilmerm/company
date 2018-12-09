@@ -87,3 +87,9 @@ body {
     height: 100%;
     float: left;
 }
+
+
+.social {
+    background-color: gainsboro;
+    padding: 20px;
+}

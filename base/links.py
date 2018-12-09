@@ -115,7 +115,8 @@ class Links(dict):
 # Barra de navegación:
 index = Link(id="index", name=_("Inicio"), view="index", img=IMG_HOME, description=_("Página principal."))
 prestamos = Link(id="prestamos", name=_("Préstamos"), view="prestamos", img=IMG_PRESTAMOS, description=_("Gestión de préstamos."))
-tienda = Link(id="tienda", name=_("Tienda"), view="tienda", img=IMG_TIENDA, description=_("Tienda en línea"))
+tienda = Link(id="tienda", name=_("Tienda"), view="tienda", img=IMG_TIENDA, description=_("Tienda en línea."))
+blog = Link(id="blog", name=_("Blog"), view="blog", img=IMG_BLOG, description=_("Nuevas publicaciones en el blog."))
 # Créditos:
 author = Link(id="author", name="{}: {}".format(_("Creado por"), PROJECT_AUTHOR), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 author_email = Link(id="author_email", name="{} | {}".format(PROJECT_AUTHOR_EMAIL, PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
@@ -125,7 +126,7 @@ prestamos_solicitud = Link(id="prestamos_solicitud", name=_("Solicitar préstamo
 prestamos_calculadora = Link(id="prestamos_calculadora", name=_("Calculadora de préstamo"), group="prestamos", view="prestamos_calculadora", img=IMG_PRESTAMOS_CALCULADORA, description=_("Utilice la herramienta para calcular las cuotas de su préstamo."))
 # App 'tienda':
 tienda_post = Link(id="tienda_post", name=_("Publicaciones"), group="tienda", view="tienda_post_list", img=IMG_TIENDA_POST, description=_("Vea los nuevos artículos publicados."))
-
+# App 'blog':
 
 
 
@@ -136,6 +137,7 @@ links.Add(
     index, 
     prestamos, 
     tienda, 
+    blog,
     # creditos
     author, 
     author_email, 

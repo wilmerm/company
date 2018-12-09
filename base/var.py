@@ -39,8 +39,9 @@ IMG_PRESTAMOS_SOLICITUD = STATIC_URL + "prestamos/img/solicitud.png"
 # Imágenes de la aplicación 'tienda':
 IMG_TIENDA = STATIC_URL + "tienda/img/tienda.png"
 IMG_TIENDA_POST = STATIC_URL + "tienda/img/articulo.png"
-
-
+# Imágenes de la aplicación 'blog':
+IMG_BLOG = STATIC_URL + "blog/img/blog.png"
+IMG_BLOG_ARTICLE = "blog/img/article.png"
 
 
 
