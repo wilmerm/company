@@ -78,6 +78,8 @@ class ArticleDetailView(DetailView):
         context["subtitleimg"] = IMG_BLOG_ARTICLE
         context["IMAGE"] = self.object.GetImg()
         context["KEYWORDS"] = self.object.GetTags()
+        context["TITLE"] = self.object.title
+        context["DESCRIPTION"] = self.object.description[:200]
         # Conteo de visitas a este artículo.
         self.object.visitas = self.object.visitas + 1
         self.object.save()

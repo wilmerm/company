@@ -3,12 +3,10 @@ Aplicaciones:
 ---------------------------------------------------------------------------------------
 
 
-
 fuente:
 
 Es un módulo que contiene un sin número de clases y funciones reutilizables, útiles 
 para todas las aplicaciones. Se exporta en la aplicación 'base' detallada más abajo.
-
 
 
 base: 
@@ -20,12 +18,10 @@ En la aplicación 'base' tendremos una plantilla que mostrará los enlaces a las
 aplicaciones del proyecto. Esta plantilla se mostrará en la url base '/' del proyecto. 
 
 
-
 tienda:
 
 La aplicación 'tienda' maneja una especie de tienda en linea, en la que se publican 
 articulos de venta con precio, descripción, especificaciones, ...
-
 
 
 blog:
@@ -35,8 +31,11 @@ La aplicación 'blog' maneja un blog.
 
 
 
+
+
 Dependencias:
 ------------------------------------------------------------------------------------------
+
 Python 3.7
 Django
 Pillow (módulo PIP de Python)

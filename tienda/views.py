@@ -78,6 +78,7 @@ class PostDetailView(DetailView):
         context["subtitleimg"] = IMG_TIENDA_POST
         context["IMAGE"] = self.object.GetImg()
         context["KEYWORDS"] = self.object.GetTags()
+        context["TITLE"] = self.object.title
         context["DESCRIPTION"] = self.object.description[:200]
         return context
 
