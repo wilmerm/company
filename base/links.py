@@ -14,8 +14,10 @@ from .var import * # También se importa el diccionario 'VAR'.
 # estos grupos.
 NAV = "NAV" # Barra de navegación.
 CREDITS = "CREDITS" # Listado de créditos y otros enlaces en el footer.
+SOCIAL = "SOCIAL" # Listado de enlaces para redes sociales.
 PRESTAMOS = "PRESTAMOS" # Aplicación 'prestamos'.
 TIENDA = "TIENDA" # Aplicación 'tienda'.
+BLOG = "BLOG" # Aplicación blog.
 
 
 class Link():
@@ -108,24 +110,48 @@ class Links(dict):
         return out
 
 
+    def GetSocial(self):
+        """Obtiene el listado de enlaces que conforman el grupo de 
+        las redes sociales de la empresa.
+        Puede configurar la url a la que apuntan en el módulo fuente/var.py
+        """
+        out = []
+        for key in self:
+            value = self[key]
+            if value.group == SOCIAL:
+                out.append(value)
+        return out
+
+
 
 
 
 # Declaramos los enlaces: ------------------------------------------------------------------
+
 # Barra de navegación:
 index = Link(id="index", name=_("Inicio"), view="index", img=IMG_HOME, description=_("Página principal."))
 prestamos = Link(id="prestamos", name=_("Préstamos"), view="prestamos", img=IMG_PRESTAMOS, description=_("Gestión de préstamos."))
 tienda = Link(id="tienda", name=_("Tienda"), view="tienda", img=IMG_TIENDA, description=_("Tienda en línea."))
 blog = Link(id="blog", name=_("Blog"), view="blog", img=IMG_BLOG, description=_("Nuevas publicaciones en el blog."))
+
 # Créditos:
 author = Link(id="author", name="{}: {}".format(_("Creado por"), PROJECT_AUTHOR), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 author_email = Link(id="author_email", name="{} | {}".format(PROJECT_AUTHOR_EMAIL, PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 politica_de_privacidad = Link(id="politica_de_privacidad", name=_("Política de privacidad"), group=CREDITS, view="politica_de_privacidad", description=_("Vea nuestra política de privacidad"), target="_blank")
+
+# Social
+facebook = Link(id="facebook", name="Facebook", group=SOCIAL, url=URL_FACEBOOK, img=IMG_FACEBOOK, target="_blank", description="Facebook")
+twitter = Link(id="twitter", name="Twitter", group=SOCIAL, url=URL_TWITTER, img=IMG_TWITTER, target="_blank", description="Facebook")
+instagram = Link(id="instagram", name="Instagram", group=SOCIAL, url=URL_INSTAGRAM, img=IMG_INSTAGRAM, target="_blank", description="Instagram")
+linkedin = Link(id="linkedin", name="LinkeIn", group=SOCIAL, url=URL_LINKEDIN, img=IMG_LINKEDIN, target="_blank", description="LinkedIn")
+
 # App 'prestamos':
 prestamos_solicitud = Link(id="prestamos_solicitud", name=_("Solicitar préstamo"), group="prestamos", view="prestamos_solicitud", img=IMG_PRESTAMOS_SOLICITUD, description=_("¡Solicite su préstamo personal ahora mismo!"))
 prestamos_calculadora = Link(id="prestamos_calculadora", name=_("Calculadora de préstamo"), group="prestamos", view="prestamos_calculadora", img=IMG_PRESTAMOS_CALCULADORA, description=_("Utilice la herramienta para calcular las cuotas de su préstamo."))
+
 # App 'tienda':
 tienda_post = Link(id="tienda_post", name=_("Publicaciones"), group="tienda", view="tienda_post_list", img=IMG_TIENDA_POST, description=_("Vea los nuevos artículos publicados."))
+
 # App 'blog':
 
 
@@ -141,6 +167,11 @@ links.Add(
     # creditos
     author, 
     author_email, 
+    # social
+    facebook,
+    twitter,
+    instagram,
+    linkedin,
     # App prestamos
     politica_de_privacidad, 
     prestamos_solicitud, 

@@ -31,7 +31,7 @@ class Article(models.Model):
     description = models.TextField(_("Descripción"), blank=True, help_text=_("Descripción de la búsqueda"))
     tags = models.CharField(_("Etiquetas"), max_length=100, blank=True)
     img = models.ImageField(_("Imagen"), blank=True, upload_to="blog/post/%Y/%m/", help_text=_("Imagen que se mostrará junto al título de la publicación"))
-    slug = models.SlugField(max_length=100, blank=True, unique=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True, editable=False)
     pub_date = models.DateTimeField(auto_now_add=True)
     visitas = models.IntegerField(_("Visitas"), default=0, editable=False, help_text=_("Cantidad de visitas a esta entrada"))
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name=_("Autor"), null=True, blank=True, editable=True)

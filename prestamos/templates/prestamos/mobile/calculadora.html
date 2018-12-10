@@ -50,28 +50,28 @@
             <a class="button2" href="{% url 'prestamos_solicitud' %}">{% trans "Solicitar préstamo" %}</a>
         </div>
     </div>
-    <small style="color: gray;">
+    <div style="color: gray; font-size: 20px">
         <b>Nota:</b>
         <i><br>
         {% trans "Cálculo aproximado de acuerdo a los datos ingresados." %} <br>
         {% trans "No se contempló período de gracia." %} <br>
         {% trans "Los resultados de esta simulación son aproximados" %}, {% trans "pudiendo variar por razones comerciales o fiscales." %} <br>
         </i>
-    </small>
+    </div>
 </div>
 
 {# tabla de amortización #}
 <div style="padding: 20px; width: 100%;">
     <div class="bcolor4" id="div_comentario" style="padding: 20px; width: 92%;"></div>
     <br>
-    <table class="table1" style="width: 95%; text-align: right">
+    <table class="table1" style="width: 95%; text-align: right; font-size: 30px">
         <tbody>
             <tr>
-                <th>{% trans "Número" %}</th>
+                <th>No.</th>
                 <th>{% trans "Interés" %}</th>
-                <th>{% trans "Abono al capital" %}</th>
-                <th>{% trans "Valor de cuota" %}</th>
-                <th>{% trans "Saldo al capital" %}</th>
+                <th>{% trans "Ab. capital" %}</th>
+                <th>{% trans "Cuota" %}</th>
+                <th>{% trans "S. capital" %}</th>
             </tr>
         </tbody>
         <tbody id="tbody_1"></tbody>

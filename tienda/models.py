@@ -35,7 +35,7 @@ class Post(models.Model):
     img_height = models.PositiveIntegerField(blank=True, editable=False)
     img = models.ImageField(_("Imágen"), width_field="img_width", height_field="img_height", upload_to="tienda/post/%Y/%m/")
     pub_date = models.DateTimeField(_("Fecha de publicación"), auto_now_add=True)
-    slug = models.SlugField(max_length=100, blank=True)
+    slug = models.SlugField(max_length=100, blank=True, editable=False, unique=True)
 
     class Meta:
         verbose_name = _("Publicación")

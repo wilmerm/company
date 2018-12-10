@@ -13,6 +13,7 @@ from fuente.var import * # También se importa el diccionario 'VAR'.
 APLICATIONS = (
     ("prestamos", _("Préstamos")),
     ("tienda", _("Tienda")),
+    ("blog", _("Blog")),
 )
 
 
@@ -31,6 +32,14 @@ IMG_HOME = IMG_DEFAULT
 # Imagenes genéricas:
 IMG_GOOD = STATIC_URL + "base/img/good.png"
 IMG_MENU = STATIC_URL + "base/img/menu.png"
+# Redes sociales:
+IMG_GPLUS = STATIC_URL + "base/img/social/gplus.svg"
+IMG_FACEBOOK = STATIC_URL + "base/img/social/facebook.svg"
+IMG_INSTAGRAM = STATIC_URL + "base/img/social/instagram.svg"
+IMG_LINKEDIN = STATIC_URL + "base/img/social/linkedin.svg"
+IMG_PINTEREST = STATIC_URL + "base/img/social/pinterest.svg"
+IMG_TWITTER = STATIC_URL + "base/img/social/twitter.svg"
+IMG_VK = STATIC_URL + "base/img/social/vk.svg"
 # Imágenes de la aplicación 'prestamos':
 IMG_PRESTAMOS = STATIC_URL + "prestamos/img/prestamos.png"
 IMG_PRESTAMOS_CALCULADORA = STATIC_URL + "prestamos/img/calculadora.png"
@@ -50,9 +59,11 @@ IMG_BLOG_ARTICLE = "blog/img/article.png"
 # estos grupos.
 NAV = "NAV"
 CREDITS = "CREDITS"
+SOCIAL = "SOCIAL"
 LINK_CHOICES = (
     (NAV, _("Barra de navegación")),
     (CREDITS, _("Créditos")),
+    (SOCIAL, _("Redes sociales")),
 )
 # También hay enlaces que pertenecen a aplicaciones especificas, por eso sumamos a la
 # lista de enlaces, las aplicaciones instaladas.

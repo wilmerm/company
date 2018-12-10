@@ -19,7 +19,6 @@
 .form1 label {
     margin: auto;
     text-align: center;
-    font-size: 30px;
  
 }
 
@@ -31,7 +30,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 
 }
 
@@ -43,7 +41,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 .form1 input[type=email] {
@@ -54,7 +51,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 .form1 input[type=checkbox] {
@@ -66,7 +62,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 .form1 input[type=submit] {
@@ -78,7 +73,6 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     transition-duration: 0.5s;
-    font-size: 30px;
 }
 
 .form1 input[type=submit]:hover {
@@ -94,7 +88,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 
@@ -113,12 +106,12 @@
     border-radius: 3px;
     margin: auto;
     text-align: center;
-    font-size: 30px;
 }
 
 
-
-
+.form1 input, select, label, textarea {
+    font-size: 45px;
+}
 
 
 
@@ -141,7 +134,6 @@
     display: block;
     padding-top: 15px;
     padding-bottom: 5px;
-    font-size: 30px;
 }
 
 .form2 input[type=text] {
@@ -151,7 +143,6 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
-    font-size: 30px;
 
 }
 
@@ -162,7 +153,6 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
-    font-size: 30px;
 }
 
 .form2 input[type=email] {
@@ -181,7 +171,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 .form2 input[type=submit] {
@@ -193,7 +182,6 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     transition-duration: 0.5s;
-    font-size: 30px;
 }
 
 .form2 input[type=submit]:hover {
@@ -208,7 +196,6 @@
     border: 1px solid lightgray;
     border-radius: 3px;
     width: 95%;
-    font-size: 30px;
 }
 
 .form2 select {
@@ -217,7 +204,6 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
-    font-size: 30px;
 }
 
 
@@ -233,5 +219,10 @@
     padding: 7px;
     border: 1px solid rgb(223, 223, 223);
     border-radius: 3px;
-    font-size: 30px;
+}
+
+
+
+.form2 input, select, label, textarea {
+    font-size: 45px;
 }

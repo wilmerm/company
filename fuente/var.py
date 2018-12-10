@@ -14,7 +14,8 @@ except BaseException:
 
 
 
-
+# Espacio de configuración para la empresa -----------------------------------------------
+# ----------------------------------------------------------------------------------------
 PROJECT_NAME = "Company"
 PROJECT_AUTHOR = "Wilmer Martínez"
 PROJECT_AUTHOR_URL = "http://www.wilmermartinez.com"
@@ -32,15 +33,17 @@ WEB_URL = ""
 # remplace su valor en el context de las views.
 TITLE = "Peña & Martínez"
 DESCRIPTION = "{} {}. {}".format(_("Sitio web de "), COMPANY_NAME, COMPANY_DESCRIPTION)
-
-
-
-
+# Redes sociales
+URL_FACEBOOK = "https://www.facebook.com/wilmermartinez01"
+URL_TWITTER = "https://twitter.com/wilmermorel"
+URL_INSTAGRAM = "https://www.instagram.com/wilmermartinez.1/"
+URL_LINKEDIN = "https://www.linkedin.com/in/wilmerm/"
 
 
 # Propiedades para SEO
 FACEBOOK_APP_ID = "1884552708497884"
-
+# --------------------------------------------------------------------------------------
+# Fin de espacio de configuración para la empresa. -------------------------------------
 
 
 

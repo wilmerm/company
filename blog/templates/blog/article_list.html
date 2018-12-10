@@ -23,7 +23,7 @@
                       <td class="post_list_img"><a href="{{ object.GetUrl }}"><img src="{{ object.GetImg }}" alt=""></a></td>
                       <td class="post_list_text">
                           <a class="post_list_title" href="{{ object.GetUrl }}"><h1>{{ object.title }}</h1> </a>
-                          <p>{{ object.description | truncatechars:300 }} <a href="{{ object.GetUrl }}">{% trans "Ver artículo completo" %}.</a></p>
+                          <p>{{ object.description | truncatechars:300 }} <br><a href="{{ object.GetUrl }}">{% trans "Ver artículo completo" %}.</a></p>
                           <i>{% trans "Autor" %}: {{ object.author.get_full_name }} | {% trans "Fecha de publicación" %}: {{ object.pub_date }}</i>
                       </td>
                   </tr>

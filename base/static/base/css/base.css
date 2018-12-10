@@ -39,7 +39,8 @@ body {
 
 #page {
     min-height: 800px;
-    background: white;
+    background: url("/static/base/img/background.png") no-repeat fixed;
+    background-size: cover;
     padding-top: 50px;
 }
 
@@ -66,9 +67,44 @@ body {
 
 
 
-#credits {
-    
+#social {
+    margin: 0px;
+    text-align: center;
+}
 
+#social .social {
+    text-align: center;
+    margin: auto;
+}
+
+#social .social td {
+    padding: 10px;
+}
+
+#social .social img {
+    height: 100px;
+    width: auto;
+    padding: 10px;
+    transition-duration: 0.5s;
+}
+
+#social .social img:hover {
+    background-color: white;
+    height: 120px;
+    color: red;
+}
+
+
+#credits {
+
+}
+
+
+
+
+.header_img img {
+    width: 30%;
+    height: auto;
 }
 
 

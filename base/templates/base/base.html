@@ -56,7 +56,7 @@
 
 
 
-   {# Facebook SDK #}
+   {# Facebook SDK --------------------------------------- #}
    <div id="fb-root"></div>
    <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -65,12 +65,12 @@
       js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=1884552708497884&autoLogAppEvents=1';
       fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));</script>
-   {# End Facebook SDK #}
+   {# End Facebook SDK ----------------------------------- #}
 
 
 
 
-   {# barra de navegación #}
+   {# barra de navegación ------------------------------- #}
    <nav id="nav">
       <ul>
          {% for link in links.GetNav %}
@@ -87,11 +87,22 @@
          </li>
       </ul>
    </nav>
+   {# End barra de navaegación -------------------------- #}
+
+
+
 
    <div id="page">
       <div id="header">
          {# imágen de cabecera #}
-         <img class="img_header" src="{{ VAR.IMG_LOGO }}" alt="{{ TITLE }}">
+         <div class="header_img">
+            <img src="{{ VAR.IMG_LOGO }}" alt="{{ TITLE }}">
+         </div>
+         
+         {# presentación de imagenes (news) #}
+         <div class="slide_show">
+
+         </div>
          {% block header %}
          {% endblock header %}
       </div>
@@ -100,7 +111,6 @@
          <div class="subtitle">
             <img class="subtitleimg" src="{{ subtitleimg }}" alt="">
             <div class="subtitletexto">{{ subtitle }}</div>
-            
          </div>
          <br>
          {% block content %}
@@ -112,6 +122,30 @@
          {% block footer %}
          {% endblock footer %}
 
+
+
+         {# redes sociales ---------------------------------------#}
+         <div id="social">
+            <h2>{% trans "¡Síguenos en las redes sociales!" %}</h2>
+            <table class="social">
+               <tbody>
+                  <tr>
+                     {% for link in  links.GetSocial %}
+                       <td>
+                          <a href="{{ link.Url }}" target="_blank" title="{{ link.name }}">
+                           <img src="{{ link.GetImg }}" alt="{{ link.name }}">
+                          </a>
+                        </td>
+                     {% endfor %}
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         {# End redes sociales -----------------------------------#}
+
+
+
+         {# creditos ------------------------------------------#}
          <div id="credits">
             {% block credits %}
             {% endblock credits %}
@@ -127,6 +161,7 @@
                {% endfor %}
             </ul>
          </div>
+         {# End creditos ---------------------------------------#}
       </div>
    </div>
 
