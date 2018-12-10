@@ -134,6 +134,27 @@
          {% block footer %}
          {% endblock footer %}
 
+
+         {# redes sociales ---------------------------------------#}
+         <div id="social">
+            <h2>{% trans "¡Síguenos en las redes sociales!" %}</h2>
+            <table class="social">
+               <tbody>
+                  <tr>
+                     {% for link in  links.GetSocial %}
+                       <td>
+                          <a href="{{ link.Url }}" target="_blank" title="{{ link.name }}">
+                           <img src="{{ link.GetImg }}" alt="{{ link.name }}">
+                          </a>
+                        </td>
+                     {% endfor %}
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         {# End redes sociales -----------------------------------#}
+
+
          <div id="credits">
             {% block credits %}
             {% endblock credits %}

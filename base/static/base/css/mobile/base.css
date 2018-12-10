@@ -66,6 +66,41 @@ body {
 
 
 
+
+
+#social {
+    margin: 0px;
+    text-align: center;
+}
+
+#social .social {
+    text-align: center;
+    margin: auto;
+}
+
+#social .social td {
+    padding: 10px;
+}
+
+#social .social img {
+    height: 100px;
+    width: auto;
+    padding: 10px;
+    transition-duration: 0.5s;
+}
+
+#social .social img:hover {
+    background-color: white;
+    height: 120px;
+    color: red;
+}
+
+
+
+
+
+
+
 #credits {
     font-size: 30px;
 }
