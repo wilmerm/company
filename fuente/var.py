@@ -18,6 +18,7 @@ except BaseException:
 # ----------------------------------------------------------------------------------------
 PROJECT_NAME = "Company"
 PROJECT_AUTHOR = "Wilmer Martínez"
+PROJECT_AUTHOR_COMPANY = "PM Soluciones"
 PROJECT_AUTHOR_URL = "http://www.wilmermartinez.com"
 PROJECT_AUTHOR_EMAIL = "wilmermorelmartinez@gmail.com"
 PROJECT_AUTHOR_PHONE = "+1-829-925-9531"
@@ -63,6 +64,22 @@ SEXO_CHOICES = (
     (FEMENINO, _("Femenino")),
     (NO_DEFINIDO, _("No definido")),
 )
+
+
+
+
+# IDENTIFICACIÓN -----------------------------------------------------
+
+CEDULA = "CÉDULA"
+PASAPORTE = "PASAPORTE"
+RNC = "RNC"
+IDENTIFICACION_CHOICES = (
+    (CEDULA, _("Cédula")),
+    (PASAPORTE, _("Pasaporte")),
+    (RNC, _("RNC")),
+)
+
+
 
 
 

@@ -11,6 +11,8 @@ from fuente.var import * # También se importa el diccionario 'VAR'.
 
 # Agrege las aplicaciones instaladas (solo las nuestras) ----------------------------------
 APLICATIONS = (
+    ("clientes", _("Clientes")),
+    ("contabilidad", _("Contabilidad")),
     ("prestamos", _("Préstamos")),
     ("tienda", _("Tienda")),
     ("blog", _("Blog")),
@@ -31,7 +33,7 @@ IMG_DEFAULT = IMG_LOGO
 IMG_HOME = IMG_DEFAULT
 # Imagenes genéricas:
 IMG_GOOD = STATIC_URL + "base/img/good.png"
-IMG_MENU = STATIC_URL + "base/img/menu.png"
+IMG_MENU = STATIC_URL + "base/img/menu.svg"
 # Redes sociales:
 IMG_GPLUS = STATIC_URL + "base/img/social/gplus.svg"
 IMG_FACEBOOK = STATIC_URL + "base/img/social/facebook.svg"

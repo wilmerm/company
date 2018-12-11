@@ -28,6 +28,7 @@ class Post(models.Model):
     en venta para la tienda.
     """
     title = models.CharField(_("Título"), max_length=100)
+    content = models.TextField(_("Contenido"), blank=True)
     description = models.TextField(_("Descripción"), blank=True)
     tags = models.CharField(_("Etiquetas"), max_length=100, blank=True)
     active = models.BooleanField(_("¿Disponible?"), default=True)

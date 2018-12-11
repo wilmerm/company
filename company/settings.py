@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     # Mis aplicaciones:
     'base',
     'blog',
-    'tienda',
+    'clientes', # ver AUTH_USER_MODEL (settings.py)
+    'contabilidad', 
     'prestamos',
+    'tienda',
+    
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#abstractuser
+AUTH_USER_MODEL = 'clientes.User' 

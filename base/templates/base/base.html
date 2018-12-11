@@ -71,7 +71,7 @@
 
 
    {# barra de navegación ------------------------------- #}
-   <nav id="nav">
+   <nav id="nav" style="text-align: right">
       <ul>
          {% for link in links.GetNav %}
             {% if link.Url == request.path %}
@@ -82,10 +82,20 @@
          {% endfor %}
          <li style="padding: 10px">|</li>
          <li style="padding: 10px">
-            {# Facebook Like button #}
-            <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+            {# Facebook Like button --------------#}
+            <div 
+               class="fb-like" 
+               data-href="{{ request.build_absolute_uri }}" 
+               data-layout="button" 
+               data-action="like" 
+               data-size="large" 
+               data-show-faces="true"
+               data-share="true">
+            </div>
+            {# End Facebook Like button ----------#}
          </li>
       </ul>
+      
    </nav>
    {# End barra de navaegación -------------------------- #}
 
@@ -143,7 +153,7 @@
          </div>
          {# End redes sociales -----------------------------------#}
 
-
+         <hr>
 
          {# creditos ------------------------------------------#}
          <div id="credits">
@@ -165,6 +175,7 @@
       </div>
    </div>
 
+   <br><br>
 
 </body>
 

@@ -135,8 +135,8 @@ tienda = Link(id="tienda", name=_("Tienda"), view="tienda", img=IMG_TIENDA, desc
 blog = Link(id="blog", name=_("Blog"), view="blog", img=IMG_BLOG, description=_("Nuevas publicaciones en el blog."))
 
 # Créditos:
-author = Link(id="author", name="{}: {}".format(_("Creado por"), PROJECT_AUTHOR), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
-author_email = Link(id="author_email", name="{} | {}".format(PROJECT_AUTHOR_EMAIL, PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
+author = Link(id="author", name="{} {}".format(_("Desarrollado por"), PROJECT_AUTHOR_COMPANY), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
+author_email = Link(id="author_email", name="{}".format(PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 politica_de_privacidad = Link(id="politica_de_privacidad", name=_("Política de privacidad"), group=CREDITS, view="politica_de_privacidad", description=_("Vea nuestra política de privacidad"), target="_blank")
 
 # Social

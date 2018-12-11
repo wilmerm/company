@@ -121,9 +121,6 @@
             <img class="subtitleimg" src="{{ subtitleimg }}" alt="">
             <div class="subtitletexto">{{ subtitle }}</div>
          </div>
-         <div class="social">
-            <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-         </div>
          <br>
          {% block content %}
          {% endblock content %}
@@ -155,11 +152,14 @@
          {# End redes sociales -----------------------------------#}
 
 
-         <div id="credits">
+         <div id="credits-mobile">
             {% block credits %}
             {% endblock credits %}
             {# créditos, legal, y otras referencias #}
-            <ul class="creditos">
+            <br>
+            <hr style="border: 1px solid gray">
+            <br>
+            <ul class="credits-mobile">
                {% for link in links.GetCredits %}
                   <li>
                      {% if link.Url %}

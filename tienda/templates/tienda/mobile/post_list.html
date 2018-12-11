@@ -12,18 +12,19 @@
 {% endblock header %}
     
 
-
-
 {% block content %}
-    <div class="margin0px center">
-        {% for link in object_list %}
-            <a class="post" href="{{ link.Url }}">
-                <div>
-                    <img src="{{ link.GetImg }}" alt="">
-                    <h1>{{ link }}</h1>
-                    <p>{{ link.description }}</p>
-                </div>
-            </a>
+    <div style="padding: 20px">
+        {% for obj in object_list %}
+        <a class="button1" href="{{ obj.Url }}">
+            <div style="width: 100%">
+                <img src="{{ obj.GetImg }}" style="width: 100%; max-height: 400px" alt="">
+                <b>{{ obj.title }}</b>
+                <p>{{ obj.description | truncatechars:100 }}</p>
+            </div>
+        </a>
         {% endfor %}
     </div>
+        
+
+
 {% endblock content %}

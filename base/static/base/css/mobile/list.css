@@ -15,3 +15,11 @@
 .creditos a {
     text-decoration: none;
 }
+
+
+
+.credits-mobile {
+    font-size: 24px;
+    list-style: none;
+    text-align: center;
+}

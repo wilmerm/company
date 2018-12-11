@@ -18,6 +18,28 @@ En la aplicación 'base' tendremos una plantilla que mostrará los enlaces a las
 aplicaciones del proyecto. Esta plantilla se mostrará en la url base '/' del proyecto. 
 
 
+clientes:
+
+Aqui llevamos el control de los clientes y usuarios registrados para acceso a la 
+plataforma a traves de un sistema de loggin.
+NOTA: El User modelo por defecto de Django, ha sido sustituido por el User de 
+esta aplicación, de modo que, la primera aplicación que se debe ejecutar el 
+makemigrations y migrate es esta.
+
+
+contabilidad: 
+
+Esta aplicación requiere que la aplicación 'clientes' esté instalada en el proyecto.
+Esta aplicación es para el manejo contable. Aqui tenemos el modelo 'Cuenta' que 
+simula una cuenta contable en la que se realizan transacciones.
+
+
+prestamos:
+
+Esta aplicación requiere que la aplicación 'contabilidad' esté instalada en el proyecto.
+Aquí tenemos el modelo 'Prestamo' para la gestión de prestamos a los clientes.
+
+
 tienda:
 
 La aplicación 'tienda' maneja una especie de tienda en linea, en la que se publican 
