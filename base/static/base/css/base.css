@@ -39,7 +39,7 @@ body {
 
 #page {
     min-height: 800px;
-    background: url("/static/base/img/background.png") no-repeat fixed;
+    background: url("/static/base/img/background.jpg") no-repeat fixed;
     background-size: cover;
     padding-top: 50px;
 }

@@ -57,6 +57,17 @@
     border-radius: 3px;
 }
 
+.form1 input[type=password] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
 .form1 input[type=checkbox] {
     height: 25px;
     width: 25px;
@@ -168,6 +179,15 @@
     width: 95%;
 }
 
+.form2 input[type=password] {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    width: 95%;
+}
+
 .form2 input[type=checkbox] {
     height: 25px;
     width: 25px;
@@ -191,6 +211,8 @@
 .form2 input[type=submit]:hover {
     background-color: white;
 }
+
+
 
 .form2 textarea {
     display: block;

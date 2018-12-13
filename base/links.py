@@ -134,6 +134,9 @@ prestamos = Link(id="prestamos", name=_("Préstamos"), view="prestamos", img=IMG
 tienda = Link(id="tienda", name=_("Tienda"), view="tienda", img=IMG_TIENDA, description=_("Tienda en línea."))
 blog = Link(id="blog", name=_("Blog"), view="blog", img=IMG_BLOG, description=_("Nuevas publicaciones en el blog."))
 
+# Sin grupo.
+login = Link(id="login", name=_("Acceder"), view="login", group=None, img=IMG_LOGO, description=_("Autentificarse"))
+
 # Créditos:
 author = Link(id="author", name="{} {}".format(_("Desarrollado por"), PROJECT_AUTHOR_COMPANY), group=CREDITS, url=PROJECT_AUTHOR_URL, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
 author_email = Link(id="author_email", name="{}".format(PROJECT_AUTHOR_PHONE), group=CREDITS, description=_("Creación: {} | {}".format(PROJECT_AUTHOR, PROJECT_AUTHOR_EMAIL)), target="_blank")
@@ -164,6 +167,8 @@ links.Add(
     prestamos, 
     tienda, 
     blog,
+    # sin grupo
+    login,
     # creditos
     author, 
     author_email, 

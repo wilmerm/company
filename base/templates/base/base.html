@@ -80,6 +80,11 @@
                <li><a href="{{ link.Url }}" placeholder="{{ link.descriptiton }}" title="{{ link.description }}">{{ link }}</a></li>
             {% endif %}
          {% endfor %}
+         {% if not request.user.email %}
+           <li><a href="{{ links.login.Url }}">{{ links.login.name }}</a></li>
+         {% else %}
+            <li><a href="{{ request.user.GetUrl }}">{{ request.user }}</a></li>
+         {% endif %}
          <li style="padding: 10px">|</li>
          <li style="padding: 10px">
             {# Facebook Like button --------------#}

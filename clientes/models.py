@@ -26,3 +26,7 @@ class User(AbstractUser):
     identificacion = models.CharField(_("Identificación"), max_length=20, help_text=_("Número del documento de identidad."))
     identificacion_tipo = models.CharField(_("Tipo de identificación"), max_length=10, choices=IDENTIFICACION_CHOICES)
 
+    
+    def GetUrl(self):
+        return reverse_lazy("login")
+

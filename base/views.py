@@ -34,6 +34,8 @@ class IndexView(TemplateView):
         # Detecta si es un dispositivo mobil y obtiene la ruta de la plantilla 
         self.template_name = mobile.getTemplate(request, self.template_name)
         return super().dispatch(request)
+
+
     
 
 

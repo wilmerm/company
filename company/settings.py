@@ -62,7 +62,7 @@ ROOT_URLCONF = 'company.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,5 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-# https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#abstractuser
-AUTH_USER_MODEL = 'clientes.User' 
+
+AUTH_USER_MODEL = 'clientes.User' # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#abstractuser
+LOGIN_REDIRECT_URL = '/'

@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+
+
+
+{% block content %}
+
+
+<div style="">
+    <div style="width: 500px; margin: auto">
+        <form class="form2" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Acceder">
+        <br>
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    alert("hola");
+    function validarUsuario() {  
+    FB.getLoginStatus(function(response) {  
+        if(response.status == 'connected') {  
+            FB.api('/me', function(response) {  
+                alert('Hola ' + response.name);  
+            });  
+        } else if(response.status == 'not_authorized') {  
+            alert('Debes autorizar la app!');  
+        } else {  
+            alert('Debes ingresar a tu cuenta de Facebook!');  
+        }  
+    });  
+}  
+</script>
+
+
+{% endblock content %}
