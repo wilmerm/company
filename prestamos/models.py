@@ -30,19 +30,66 @@ class Solicitud(models.Model, Texto):
     telefono = models.CharField(_("Teléfono celular"), max_length=20, help_text=_("Indíquenos su número de teléfono movil."))
     email = models.EmailField(_("Correo electrónico"), max_length=254, blank=True, help_text=_("Indíquenos su correo electrónico."))
     nota = models.TextField(_("Comentario adicional"), blank=True)
-    consentimiento = models.CharField(_("Estoy de acuerdo"), max_length=50, help_text=_("Declaro haber leído la política de privacidad, y estar de acuerdo con ella."))
+    consentimiento = models.BooleanField(_("Estoy de acuerdo"), help_text=_("Declaro haber leído la política de privacidad, y estar de acuerdo con ella."))
     fecha = models.DateTimeField(_("Fecha"), auto_now_add=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default=None, editable=False, help_text=_("Usuario que registró la solicitud (opcional)"))
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_DEFAULT, default=None, blank=True, null=True, editable=False, help_text=_("Usuario que registró la solicitud (opcional)"))
+    
+    # Datos extra según pedido de la Empresa.
+    direccion = models.CharField(_("Dirección"), max_length=200, help_text=_("Dirección de su residencia o domicilio."))
+    estado_civil = models.CharField(_("Estado civil"), max_length=10, choices=ESTADO_CIVIL_CHOICES)
+    trabajo_nombre = models.CharField(_("Lugar de trabajo"), max_length=50, blank=True)
+    trabajo_direccion = models.CharField(_("Dirección del trabajo"), max_length=200, blank=True)
+    trabajo_telefono = models.CharField(_("Teléfono del trabajo"), max_length=20, blank=True)
+    trabajo_posicion = models.CharField(_("Puesto que ocupa"), max_length=50, help_text=_("Puesto que ocupa dentro de la empresa."), blank=True)
+    trabajo_ingresos = models.DecimalField(_("Ingresos mensuales"), max_digits=11, decimal_places=2, blank=True, default=0, help_text=_("Sus ingresos mensuales dentro de la empresa."))
+    trabajo_inicio = models.DateField(_("Fecha en que ingresó"), blank=True, null=True, help_text=_("Fecha en que empezó a formar parte de la empresa como empleado."))
+    conyugue_nombre = models.CharField(_("Nombre del conyugue"), max_length=50, blank=True)
+    conyugue_trabajo_nombre = models.CharField(_("Lugar de trabajo del conyugue"), max_length=50, blank=True)
+    conyugue_trabajo_posicion = models.CharField(_("Puesto que ocupa"), max_length=50, blank=True, help_text=_("Puesto que ocupa el conyugue dentro de la empresa."))
+    conyugue_trabajo_direccion = models.CharField(_("Dirección del trabajo dle conyugue"), max_length=200, blank=True)
+    conyugue_trabajo_telefono = models.CharField(_("Teléfono del trabajo del conyugue"), max_length=20, blank=True)
+    conyugue_trabajo_ingresos = models.DecimalField(_("Ingresos mensuales del conyugue"), max_digits=11, decimal_places=2, blank=True, default=0, help_text=_("Sus ingresos mensuales dentro de la empresa."))
+    ref1_nombre = models.CharField(_("Nombre"), max_length=50, blank=True)
+    ref1_parentesco = models.CharField(_("Parentesco"), max_length=20, blank=True)
+    ref1_telefono = models.CharField(_("Teléfono"), max_length=20, blank=True)
+    ref1_celular = models.CharField(_("Celular"), max_length=20, blank=True)
+    ref1_direccion = models.CharField(_("Dirección"), max_length=200, blank=True)
+    ref2_nombre = models.CharField(_("Nombre"), max_length=50, blank=True)
+    ref2_parentesco = models.CharField(_("Parentesco"), max_length=20, blank=True)
+    ref2_telefono = models.CharField(_("Teléfono"), max_length=20, blank=True)
+    ref2_celular = models.CharField(_("Celular"), max_length=20, blank=True)
+    ref2_direccion = models.CharField(_("Dirección"), max_length=200, blank=True)
+    ref3_nombre = models.CharField(_("Nombre de la empresa"), max_length=50, blank=True)
+    ref3_telefono = models.CharField(_("Teléfono"), max_length=20, blank=True)
+    ref4_nombre = models.CharField(_("Nombre de la empresa"), max_length=50, blank=True)
+    ref4_telefono = models.CharField(_("Teléfono"), max_length=20, blank=True)
+    cedula_file = models.FileField(_("Cédula"), upload_to="prestamos/solicitud/%Y/%m/", blank=True, help_text=_("Suba la copia de su cédula."))
+    carta_de_trabajo_file = models.FileField(_("Carta de trabajo"), upload_to="prestamos/solicitud/%Y/%m/", blank=True, help_text=_("Suba la carta de trabajo escaneada."))
 
     class Meta:
         verbose_name = _("Solicitud")
         verbose_name_plural = _("Solicitudes")
 
     def __str__(self):
-        return "{} {}: {}".format(self.verbose_name, self.id, self.GetNombreCorto())
+        return "{} {}: {}".format(_("Solicitud"), self.id, self.GetNombreCorto())
 
     def get_absolute_url(self):
-        return reverse("solicitud_detail", kwargs={"pk": self.pk})
+        return reverse("prestamos_solicitud_enviada")
+
+    def clean(self):
+        """Operación de limpieza para validar los datos antes de guardar.
+        """
+        # Validamos la cédula ingresada.
+        try:
+            self.cedula = self.ValidarCedula(self.cedula)
+        except BaseException as e:
+            raise ValidationError({"cedula": _("¡Ups! Al parecer la cédula no es válida. {}".format(e))})
+        # Limpiamos el nombre para que sea en mayuscula.
+        self.nombre = self.nombre.upper()
+        # El consentimiento es obligatorio.
+        if self.consentimiento == False:
+            raise ValidationError({"consentimiento": _("Indique que está de acuerdo con la política de privacidad.")})
+
 
     def GetNombreCorto(self):
         return self.nombre.split(" ")[0]

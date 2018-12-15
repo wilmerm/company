@@ -12,8 +12,10 @@ from . import email
 
 
 class Detail(object):
-    """Facilita mostrar la información de un objeto modelo 
-    cualquiera, mostrando sus fields y values. """
+    """
+    Facilita mostrar la información de un objeto modelo 
+    cualquiera, mostrando sus fields y values. 
+    """
     def __init__(self):
         self.fields = []
 
@@ -61,7 +63,9 @@ class Detail(object):
 
 
 class Menu(object):
-    """Crea objetos que se utilizan como menus en las plantillas."""
+    """
+    Crea objetos que se utilizan como menus en las plantillas.
+    """
     def __init__(self, id, name, url="", img="", selected=False, help=""):
         self.id = id
         self.name = _(name)
@@ -97,10 +101,13 @@ class Menu(object):
 
 
 class Texto(object):
-    """Clase para trabajar con textos."""
+    """
+    Clase para trabajar con textos.
+    """
 
     def Normalize(self, string, lower=True):
-        """remplaza el texto por uno similiar sin tildes ni caracteres especiales como eñes
+        """
+        remplaza el texto por uno similiar sin tildes ni caracteres especiales como eñes
         y en minuscula si es indicado.
         """
         out = ''.join((c for c in unicodedata.normalize('NFD', string) if unicodedata.category(c) != 'Mn'))
@@ -110,7 +117,8 @@ class Texto(object):
         return out
 
     def GetEtiquetas(self, lista):
-        """Obtiene una cadena de texto a partir de los valores de una lista. Estos valores
+        """
+        Obtiene una cadena de texto a partir de los valores de una lista. Estos valores
         son formateados eliminando las tildes y en totos en minusculas, separados por un espacio.
         """
         out = ""
@@ -122,7 +130,8 @@ class Texto(object):
         return out.strip()
 
     def FormatForUsername(self, string, remplace="", lower=True):
-        """ Formatea el texto dejando solo los caracteres que esten en el rango de la 'a' a la 'z' 
+        """ 
+        Formatea el texto dejando solo los caracteres que esten en el rango de la 'a' a la 'z' 
         en minuzculas o mayusculas (sin la ñ ni vocales acentuadas) y los números del 1 al 9.
         Si se indica el remplace, se remplazan los caracteres no permitidos por el indicado. de lo 
         contrario se eliminará
@@ -174,17 +183,24 @@ class Texto(object):
         return self.IsPossibleName(text)
 
     def SetMoneda(self, numero, simbolo="$", ndec=2):
+        """
+        Convierte el número indicado en una cadena de texto 
+        con formato moneda.
+        """
         return "{}{:,}".format(simbolo, round(numero, 2))
 
     def Strip(self, texto):
-        """Elimina los espacios extras del texto indicado.
+        """
+        Elimina los espacios extras del texto indicado.
         """
         return texto.replace("     ", " ").replace("    ", " ").replace("   ", " ").replace("  ", " ").strip()
 
     def Int(self, texto):
-        """Obtiene un número entero a partir del texto introduccido, eliminando 
+        """
+        Obtiene un número entero a partir del texto introduccido, eliminando 
         los caracteres que no sean númericos. Si hay un punto, los caracteres a 
-        la derecha del punto serán omitidos."""
+        la derecha del punto serán omitidos.
+        """
         n = ""
         for c in texto:
             if c == ".":
@@ -194,8 +210,10 @@ class Texto(object):
         return int(n)
 
     def Float(self, texto):
-        """Obtiene un número de coma flotante a partir del texto introduccido,
-        eliminando los caracteres que no sean númericos, exceptuando el punto."""
+        """
+        Obtiene un número de coma flotante a partir del texto introduccido,
+        eliminando los caracteres que no sean númericos, exceptuando el punto.
+        """
         n = ""
         for c in texto:
             if c in ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."):
@@ -203,8 +221,10 @@ class Texto(object):
         return float(n)
 
     def ValidarCedula(self, texto):
-        """Valida que el formato de texto introducido corresponda 
-        a un formato de documento de identidad nacional válido para la Rep. Dom."""
+        """
+        Valida que el formato de texto introducido corresponda 
+        a un formato de documento de identidad nacional válido para la Rep. Dom.
+        """
         texto = texto.replace(" ", "").replace("-", "")
         for c in texto:
             if not c in ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"):
@@ -226,7 +246,9 @@ class Texto(object):
 
 
 class Numero(object):
-    """Clase para trabajar con números."""
+    """
+    Clase para trabajar con números.
+    """
 
     def MontoText(self, monto, moneda="", html=False):
         if not isinstance(moneda, str):
@@ -245,8 +267,14 @@ class Numero(object):
 
 
 class Fecha(object):
+    """
+    Clase para el manejo de fechas.
+    """
 
     def GetTiempo(self, fecha1, fecha2=datetime.date.today(), intexto=False):
+        """
+        Obtiene la diferencia (tiempo) entre dos fechas.
+        """
         try:
             timedelta = fecha2 - fecha1
             days = timedelta.days
@@ -261,7 +289,8 @@ class Fecha(object):
         return days
 
     def GetListadoDeFechas(self, inicio=datetime.date.today(), periodo=MENSUAL, limite=0, fin=None):
-        """Obtiene un listado con las fechas en el rango dado.
+        """
+        Obtiene un listado con las fechas en el rango dado.
 
         inicio = fecha de inicio.
         periodo = 'diario' | 'interdiario' | 'semanal' | 'quincenal' | 'mensual' | 'anual' 
@@ -314,13 +343,15 @@ class Fecha(object):
             return fechas
 
     def GetRangoDeFechas(self, inicio, fin=datetime.date.today(), periodo=MENSUAL):
-        """Obtiene un listado de todas las fechas comprendidas 
+        """
+        Obtiene un listado de todas las fechas comprendidas 
         en el rango de fechas indicado.
         """
         return self.GetListadoDeFechas(inicio, periodo, 999999999999, fin)
 
     def GetUltimoDiaDelMes(self, year=None, month=None):
-        """Obtiene el ultimo dia del mes indicado. Si no se indica mes 
+        """
+        Obtiene el ultimo dia del mes indicado. Si no se indica mes 
         se tomará como referencia la fecha actual.
         """
         if not year:
@@ -340,7 +371,9 @@ class Fecha(object):
 
 
 class Encriptado(encriptado.Encriptado):
-	"""Clase para encriptar texto. """
+	"""
+    Clase para encriptar texto. 
+    """
 
 
 
@@ -348,11 +381,13 @@ class Encriptado(encriptado.Encriptado):
 
 
 class PrestamoBase(Fecha):
-    """Clase para las operaciones de cálculo de un préstamo.
+    """
+    Clase para las operaciones de cálculo de un préstamo.
     """
 
     def GetDuraccion(self, fecha_inicio, cant_cuotas, periodo=MENSUAL):
-        """Obtiene el tiempo de duración del préstamo, desde la fecha
+        """
+        Obtiene el tiempo de duración del préstamo, desde la fecha
         de inicio (desembolso) hasta la fecha en que concluirá según 
         la cantidad de cuotas y el periodo en que se generan dichas cuotas.
         
@@ -404,7 +439,8 @@ class PrestamoBase(Fecha):
         return tabla
 
     def GetAmortizacionCuotaVariable(self, monto, tasa, cuotas, periodo=MENSUAL, inicio=datetime.date.today()):
-        """Retorna un listado de diccionarios que contienen 
+        """
+        Retorna un listado de diccionarios que contienen 
         información de las cuotas de la tabla de amortización 
         de un préstamo con cuota de tipo variable.
         """
@@ -446,12 +482,14 @@ class PrestamoBase(Fecha):
         return tabla
 
     def GetAmortizacionTitulos(self):
-        """Obtiene los nombres de las columnas de la tabla de amortización.
+        """
+        Obtiene los nombres de las columnas de la tabla de amortización.
         """
         return (_("Fecha"), _("Valor"), _("Interés"), _("Capital"), _("Capital restante"))
 
     def GetValorDeCuotaFija(self, monto, tasa, cuotas, periodo=MENSUAL):
-        """Retorna el valor actual de la cuota, según el método francés,
+        """
+        Retorna el valor actual de la cuota, según el método francés,
         en donde las cuotas son fijas. -> float(x)
 
         Formula = R = P [(i (1 + i)**n) / ((1 + i)**n – 1)].
@@ -478,7 +516,8 @@ class PrestamoBase(Fecha):
         return (valor, interes, monto)
 
     def GetValorDeCuotaVariable(self, capital, tasa, periodo=MENSUAL):
-        """Retorna una tupla con el valor de la cuota, el interes y el capital.
+        """
+        Retorna una tupla con el valor de la cuota, el interes y el capital.
         para prestamos con cuotas variables.
         --> (valor, interes, capital)
         """

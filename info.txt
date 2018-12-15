@@ -61,3 +61,24 @@ Dependencias:
 Python 3.7
 Django
 Pillow (módulo PIP de Python)
+
+
+
+
+
+
+Procedimientos:
+------------------------------------------------------------------------------------------
+
+CONTEXT GLOBAL PARA TODAS LAS VIEWS:
+
+    El context global para todas las views de este proyecto, se 
+    encuentra en en el módulo 'context_processors' de la aplicación 'base'. 
+
+    Este archivo lo incluímos en el 'settings.py' del proyecto, en la opción 
+    'context_procesors' dentro de la variable 'TEMPLATES'.
+
+
+
+
+

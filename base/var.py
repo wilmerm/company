@@ -9,6 +9,55 @@ from fuente.var import * # También se importa el diccionario 'VAR'.
 
 
 
+
+
+# Espacio de configuración para la empresa -----------------------------------------------
+# ----------------------------------------------------------------------------------------
+PROJECT_NAME = "Company"
+PROJECT_AUTHOR = "Wilmer Martínez"
+PROJECT_AUTHOR_COMPANY = "PM Soluciones"
+PROJECT_AUTHOR_URL = "http://www.wilmermartinez.com"
+PROJECT_AUTHOR_EMAIL = "wilmermorelmartinez@gmail.com"
+PROJECT_AUTHOR_PHONE = "+1-829-925-9531"
+PROJECT_DESCRIPTION = _("")
+# Sobre la empresa
+COMPANY_NAME = "Soluciones Morel"
+COMPANY_NAME2 = "Soluciones Morel SRL"
+COMAPANY_IDENTIFICATION = ""
+COMPANY_DESCRIPTION = _("Viviendas, Alquileres, Solares, Fincas, Préstamos")
+COMPANY_EMAIL = "solusionesmorel@hotmail.com"
+COMPANY_PHONE = "809-598-6155"
+# Sobre la web
+WEB_NAME = COMPANY_NAME
+WEB_URL = "http://www.solucionesmorel.com"
+# Título y descripción que se mostrará en las páginas, a menos que se 
+# remplace su valor en el context de las views.
+TITLE = WEB_NAME
+DESCRIPTION = "{} {}. {}".format(_("Sitio web de "), COMPANY_NAME, COMPANY_DESCRIPTION)
+# Redes sociales
+URL_FACEBOOK = "https://www.facebook.com/SOLUCIONES-MOREL-265648666943445/"
+URL_TWITTER = ""
+URL_INSTAGRAM = ""
+URL_LINKEDIN = ""
+
+
+# Propiedades para SEO
+FACEBOOK_APP_ID = "1884552708497884"
+# --------------------------------------------------------------------------------------
+# Fin de espacio de configuración para la empresa. -------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Agrege las aplicaciones instaladas (solo las nuestras) ----------------------------------
 APLICATIONS = (
     ("clientes", _("Clientes")),
@@ -24,16 +73,16 @@ APLICATIONS = (
 
 
 
-
-
 # Imagenes que se encuentran en la carpeta static del proyecto.
 # Imagenes principales:
-IMG_LOGO = STATIC_URL + "base/img/logo1.png"
+IMG_LOGO = STATIC_URL + "base/img/logo1.svg"
+IMG_LOGO_ICON = STATIC_URL + "base/img/logo_icon.png" # imágen que se muestra en la pestaña del navegador.
 IMG_DEFAULT = IMG_LOGO
 IMG_HOME = IMG_DEFAULT
 # Imagenes genéricas:
 IMG_GOOD = STATIC_URL + "base/img/good.png"
 IMG_MENU = STATIC_URL + "base/img/menu.svg"
+IMG_FORM = STATIC_URL + "base/img/form.png"
 # Redes sociales:
 IMG_GPLUS = STATIC_URL + "base/img/social/gplus.svg"
 IMG_FACEBOOK = STATIC_URL + "base/img/social/facebook.svg"

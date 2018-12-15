@@ -12,12 +12,6 @@ from .models import *
 
 
 
-CONTEXT = {}
-CONTEXT.update(VAR)
-CONTEXT["links"] = links
-CONTEXT["conf"] = Configuration()
-CONTEXT["IMAGE"] = IMG_LOGO
-
 
 
 class IndexView(TemplateView):
@@ -25,7 +19,6 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = ""
         context["subtitleimg"] = IMG_HOME
         return context
@@ -44,7 +37,6 @@ class PoliticaDePrivacidadView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = _("Política de privacidad")
         context["subtitleimg"] = IMG_DEFAULT
         return context

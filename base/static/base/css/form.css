@@ -127,6 +127,10 @@
 
 
 
+.form1 .helptext {
+    color: gray;
+    font-size: small;
+}
 
 
 
@@ -245,4 +249,143 @@
     padding: 7px;
     border: 1px solid rgb(223, 223, 223);
     border-radius: 3px;
+}
+
+
+
+
+
+
+/* form 3 (Tipo parrafo)-----------------------------------------------------*/
+
+
+
+.form3 {
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+    border: 2px dashed gray;
+    border-radius: 10px;
+}
+
+
+.form3 p {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+}
+
+
+.form3 label {
+    margin: auto;
+    text-align: left;
+ 
+}
+
+
+.form3 input[type=text] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+
+}
+
+.form3 input[type=number] {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form3 input[type=email] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form3 input[type=password] {
+    display: block;
+    padding: 10px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form3 input[type=checkbox] {
+    height: 25px;
+    width: 25px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form3 input[type=submit] {
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+.form3 input[type=submit]:hover {
+    background-color: white;
+}
+
+.form3 input[type=file] {
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+.form3 select {
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.form3 textarea {
+    display: block;
+    padding: 10px;
+    min-height: 200px;
+    width: 90%;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+
+.form3 .errorlist {
+    list-style: none;
+    display: inline;
+}
+
+
+.form3 .errorlist li {
+    background-color: rgb(255, 236, 131);
+    padding: 7px;
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 3px;
+}
+
+
+
+.form3 .helptext {
+    color: gray;
+    font-size: small;
 }

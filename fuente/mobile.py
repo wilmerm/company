@@ -1,4 +1,7 @@
-
+"""
+Módulo para identificar si el dispositivo desde el cual está conectado
+el cliente es un dispositivo movil.
+"""
 
 
 
@@ -19,7 +22,8 @@ mobile_ua_hints = [ 'SymbianOS', 'Opera Mini', 'iPhone', "Android", "Mobile"]
  
  
 def isMobile(request):
-    """Detecta si se está conectado en un dispositivo movil.
+    """
+    Detecta si se está conectado en un dispositivo movil.
     """
     mobile_browser = False
     ua = request.META['HTTP_USER_AGENT'].lower()[0:4]

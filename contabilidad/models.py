@@ -21,21 +21,26 @@ from fuente.email import Email
 
 
 class Cuenta(models.Model):
-    """Gestión de préstamos. Aqui se almacenan los préstamos de 
-    los diferentes clientes.
+    """
+    Gestión de cuentas. Es una cuenta contable, capaz de 
+    que se realicen transacciones con ella.
     """
     cliente = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Cliente"), on_delete=models.PROTECT, help_text=_("Cliente del préstamo."))
     # Fields automáticas.
     numero = models.CharField(_("Número"), unique=True, max_length=8)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Usuario"), related_name="user", on_delete=models.SET_DEFAULT, editable=False, default=None, help_text=_("Usuario que creó esto."))
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Usuario"), related_name="user", on_delete=models.SET_DEFAULT, default=None, help_text=_("Usuario que creó esto."))
     fecha_creacion = models.DateTimeField(_("Fecha de creación"), auto_now_add=True)
     tags = models.CharField(max_length=200)
-
 
     class Meta:
         verbose_name = _("Cuenta")
         verbose_name_plural = _("Cuentas")
 
-    
+
     def __str__(self):
-        return "{} {}".format(self.verbose_name, self.numero)
+        return "{} {}".format(_("Cuenta"), self.numero)
+
+
+
+
+

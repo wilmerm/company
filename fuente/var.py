@@ -14,37 +14,11 @@ except BaseException:
 
 
 
-# Espacio de configuración para la empresa -----------------------------------------------
-# ----------------------------------------------------------------------------------------
-PROJECT_NAME = "Company"
-PROJECT_AUTHOR = "Wilmer Martínez"
-PROJECT_AUTHOR_COMPANY = "PM Soluciones"
-PROJECT_AUTHOR_URL = "http://www.wilmermartinez.com"
-PROJECT_AUTHOR_EMAIL = "wilmermorelmartinez@gmail.com"
-PROJECT_AUTHOR_PHONE = "+1-829-925-9531"
-PROJECT_DESCRIPTION = _("")
-# Sobre la empresa
-COMPANY_NAME = "Peña & Martínez"
-COMPANY_NAME2 = "Peña & Martínez SRL"
-COMPANY_DESCRIPTION = _("Somos una empresa dedicada a ofrecer servicios inmobiliarios, préstamos personales, diseño web empresarial, servicios jurídicos en general...")
-# Sobre la web
-WEB_NAME = "Peña & Martínez"
-WEB_URL = ""
-# Título y descripción que se mostrará en las páginas, a menos que se 
-# remplace su valor en el context de las views.
-TITLE = "Peña & Martínez"
-DESCRIPTION = "{} {}. {}".format(_("Sitio web de "), COMPANY_NAME, COMPANY_DESCRIPTION)
-# Redes sociales
-URL_FACEBOOK = "https://www.facebook.com/wilmermartinez01"
-URL_TWITTER = "https://twitter.com/wilmermorel"
-URL_INSTAGRAM = "https://www.instagram.com/wilmermartinez.1/"
-URL_LINKEDIN = "https://www.linkedin.com/in/wilmerm/"
 
 
-# Propiedades para SEO
-FACEBOOK_APP_ID = "1884552708497884"
-# --------------------------------------------------------------------------------------
-# Fin de espacio de configuración para la empresa. -------------------------------------
+
+
+
 
 
 
@@ -65,6 +39,17 @@ SEXO_CHOICES = (
     (NO_DEFINIDO, _("No definido")),
 )
 
+
+SOLTERO = "SOLTERO"
+CASADO = "CASADO"
+UNION_LIBRE = "UNION_LIBRE"
+OTRO = "OTRO"
+ESTADO_CIVIL_CHOICES = (
+    (SOLTERO, _("Soltero")),
+    (CASADO, _("Casado")),
+    (UNION_LIBRE, _("Unión libre")),
+    (OTRO, _("Otro")),
+)
 
 
 

@@ -21,7 +21,7 @@
                 <div>
                     <img src="{{ link.GetImg }}" alt="">
                     <h1>{{ link }}</h1>
-                    <p>{{ link.description }}</p>
+                    <p>{{ link.description | truncatechars:100 }}</p>
                 </div>
             </a>
         {% endfor %}

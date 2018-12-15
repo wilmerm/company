@@ -1,0 +1,13 @@
+Gestión de préstamos.
+
+Sistema de logín para clientes.
+ - Los clientes podrán ver el estatus de sus préstamos en linea.
+ - El administrador podrá ver que clientes están en linea y cuales han ingresado en determinado momento.
+ - Los usuario registrados podrán recibir correos publicitarios de nuevas ofertas.
+ 
+
+Integración de las redes sociales:
+ - Mediante los plugin de redes sociales los visitantes podrán compartir el contenido de la página con sus amigos.
+ - Podrán seguir la página y sus publicaciones en la redes sociales.
+ - 
+ - 

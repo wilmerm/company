@@ -31,7 +31,6 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = _("Préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS
         context["IMAGE"] = context["subtitleimg"]
@@ -45,14 +44,36 @@ class IndexView(TemplateView):
 
 
 
-class SolicitudView(FormView):
+
+class SolicitudView(CreateView):
+    model = Solicitud
+    template_name = "prestamos/solicitud.html"
+    fields = "__all__"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["subtitle"] = _("Solicitar préstamo")
+        context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
+        context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = "prestamos,solicitud,solicitar"
+        return context
+
+    def dispatch(self, request):
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)
+
+
+
+class SolicitudView2(FormView):
+    """
+    !!!!!!!NO ES UTILIZADA!!!!!!!
+    """
     template_name = "prestamos/solicitud.html"
     form_class = SolicitudForm
     success_url = reverse_lazy("prestamos_solicitud_enviada")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = _("Solicitar préstamo")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
         context["IMAGE"] = context["subtitleimg"]
@@ -76,7 +97,6 @@ class SolicitudEnviadaView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = _("¡Solicitud enviada!")
         context["subtitleimg"] = IMG_PRESTAMOS_SOLICITUD
         context["IMAGE"] = context["subtitleimg"]
@@ -94,7 +114,6 @@ class CalculadoraView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(CONTEXT)
         context["subtitle"] = _("Calculadora de préstamos")
         context["subtitleimg"] = IMG_PRESTAMOS_CALCULADORA
         context["IMAGE"] = context["subtitleimg"]
