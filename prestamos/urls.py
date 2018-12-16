@@ -22,4 +22,5 @@ urlpatterns = [
     path('solicitud/', views.SolicitudView.as_view(), name='prestamos_solicitud'),
     path('solicitud/enviada/', views.SolicitudEnviadaView.as_view(), name='prestamos_solicitud_enviada'),
     path('calculadora/', views.CalculadoraView.as_view(), name='prestamos_calculadora'),
+    path('prestamo/create/', views.PrestamoCreateView.as_view(), name='prestamos_prestamo_create'),
 ]

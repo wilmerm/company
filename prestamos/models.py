@@ -6,6 +6,7 @@ import datetime
 from django.db import models
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext as _
+from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.conf import settings
 
@@ -15,6 +16,7 @@ from base.models import Configuration
 from fuente.base import Texto, Numero, Fecha, PrestamoBase
 from fuente.email import Email
 from contabilidad.models import Cuenta
+from clientes.models import Cliente
 
 
 
@@ -106,13 +108,15 @@ class Prestamo(models.Model, PrestamoBase):
     """Gestión de préstamos. Aqui se almacenan los préstamos de 
     los diferentes clientes.
     """
-    cuenta = models.ForeignKey(Cuenta, verbose_name=_("Cuenta"), on_delete=models.CASCADE)
+    cuenta = models.ForeignKey(Cuenta, verbose_name=_("Cuenta"), blank=True, null=True, default=None, on_delete=models.CASCADE)
+    #cliente = models.ForeignKey(Cliente, verbose_name=_("Cliente"), default=None, null=True, on_delete=models.CASCADE)
     monto = models.DecimalField(_("Monto"), max_digits=12, decimal_places=2, help_text=_("Monto del préstamo."))
     tasa = models.DecimalField(_("Tasa"), max_digits=5, decimal_places=2)
     cuotas = models.IntegerField(_("Cuotas"))
     periodo = models.CharField(_("Periodo de pagos"), max_length=10, choices=PERIODO_CHOICES)
     #cuotas_tipo = models.CharField(_("Tipo de cuotas"), max_length=10, choices=CUOTA_TIPOS)
-    fecha_inicio = models.DateField(_("Fecha de inicio"), auto_now=True)
+    fecha_inicio = models.DateField(_("Fecha de inicio"), default=timezone.now)
+    fecha_creacion = models.DateTimeField(_("Fecha de creación"), auto_now_add=True)
     # Fields automáticas.
 
 
@@ -122,4 +126,9 @@ class Prestamo(models.Model, PrestamoBase):
 
     
     def __str__(self):
-        return "{} {}".format(self.verbose_name, self.cuenta.numero)
+        try:
+            return "{} {}".format(_("Préstamo"), self.cuenta.numero)
+        except BaseException:
+            return "{} {} {}".format("Préstamo", self.cuenta, self.cliente)
+
+    

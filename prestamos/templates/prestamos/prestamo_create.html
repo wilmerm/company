@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+
+
+
+
+
+
+{% block header %}
+
+{% endblock header %}
+    
+
+
+
+{% block content %}
+    <div style="padding: 20px; width: 600px">
+        <div class="form3">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.errors }}
+
+                <div class="fieldGroup" id="prestamo_datos_generales">
+                    <p class="field">
+                        {% with form.cliente as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                    <p class="field">
+                        {% with form.monto as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                    <p class="field">
+                        {% with form.cuotas as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                    <p class="field">
+                        {% with form.tasa as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                    <p class="field">
+                        {% with form.periodo as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                    <p class="field">
+                        {% with form.fecha_inicio as field %}
+                            {% if field.errors %}
+                            {{ field.errors }}
+                            {% endif %}
+                            <label for="id_{{ field.name }}">{{ field.label }}</label><br>
+                            {{ field }}
+                            <span class="helptext">{{ field.help_text }}</span>
+                        {% endwith %}
+                    </p>
+                </div>
+                <hr>
+                <input type="submit" value="Crear préstamo">
+            </form>
+        </div>
+    </div>
+        
+
+
+{% endblock content %}

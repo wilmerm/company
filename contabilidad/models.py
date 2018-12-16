@@ -14,7 +14,7 @@ from base.var import *
 from base.models import Configuration
 from fuente.base import Texto, Numero, Fecha
 from fuente.email import Email
-
+from clientes.models import Cliente
 
 
 
@@ -25,7 +25,7 @@ class Cuenta(models.Model):
     Gestión de cuentas. Es una cuenta contable, capaz de 
     que se realicen transacciones con ella.
     """
-    cliente = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Cliente"), on_delete=models.PROTECT, help_text=_("Cliente del préstamo."))
+    cliente = models.ForeignKey(Cliente, verbose_name=_("Cliente"), on_delete=models.PROTECT, help_text=_("Cliente del préstamo."))
     # Fields automáticas.
     numero = models.CharField(_("Número"), unique=True, max_length=8)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Usuario"), related_name="user", on_delete=models.SET_DEFAULT, default=None, help_text=_("Usuario que creó esto."))

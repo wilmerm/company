@@ -124,3 +124,26 @@ class CalculadoraView(TemplateView):
         # Detecta si es un dispositivo mobil y obtiene la ruta de la plantilla 
         self.template_name = mobile.getTemplate(request, self.template_name)
         return super().dispatch(request)
+
+
+
+class PrestamoCreateView(CreateView):
+    """
+    Crea un nuevo préstamo.
+    """
+    template_name = "prestamos/prestamo_create.html"
+    model = Prestamo
+    fields = "__all__"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["subtitle"] = _("Nuevo préstamo")
+        context["subtitleimg"] = IMG_PRESTAMOS
+        context["IMAGE"] = context["subtitleimg"]
+        context["KEYWORDS"] = "prestamo"
+        return context
+
+    def dispatch(self, request):
+        # Detecta si es un dispositivo mobil y obtiene la ruta de la plantilla 
+        self.template_name = mobile.getTemplate(request, self.template_name)
+        return super().dispatch(request)

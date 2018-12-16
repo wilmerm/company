@@ -99,6 +99,36 @@
          {% endif %}
          <li style="padding: 10px">|</li>
          <li style="padding: 10px">
+            {# Motor de busqueda de Google #}
+            <div style="width: 400px; margin-left: auto; margin-right: 0px; right: 0px;" class="subtitleimg">
+               <script>
+                  (function() {
+                     var cx = '011505603132061548716:4kkue8fe7q0';
+                     var gcse = document.createElement('script');
+                     gcse.type = 'text/javascript';
+                     gcse.async = true;
+                     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                     var s = document.getElementsByTagName('script')[0];
+                     s.parentNode.insertBefore(gcse, s);
+                  })();
+               </script>
+               <style>
+                  .gsc-control-cse {
+                     padding: 0px;
+                     background-color: transparent;
+                     border: none;
+                  }
+                  .gsc-control-cse-es {
+                     padding: 0px;
+                     background-color: transparent;
+                     border: none;
+                  }
+               </style>
+               <gcse:search></gcse:search>
+            </div>
+            {# End motor de busqueda de Google #}
+         </li>
+         <li style="padding: 10px">
             {# Facebook Like button --------------#}
             <div 
                class="fb-like" 
