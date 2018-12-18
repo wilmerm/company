@@ -109,15 +109,15 @@ class Prestamo(models.Model, PrestamoBase):
     los diferentes clientes.
     """
     cuenta = models.ForeignKey(Cuenta, verbose_name=_("Cuenta"), blank=True, null=True, default=None, on_delete=models.CASCADE)
-    #cliente = models.ForeignKey(Cliente, verbose_name=_("Cliente"), default=None, null=True, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, verbose_name=_("Cliente"), on_delete=models.CASCADE)
     monto = models.DecimalField(_("Monto"), max_digits=12, decimal_places=2, help_text=_("Monto del préstamo."))
     tasa = models.DecimalField(_("Tasa"), max_digits=5, decimal_places=2)
     cuotas = models.IntegerField(_("Cuotas"))
     periodo = models.CharField(_("Periodo de pagos"), max_length=10, choices=PERIODO_CHOICES)
-    #cuotas_tipo = models.CharField(_("Tipo de cuotas"), max_length=10, choices=CUOTA_TIPOS)
+    cuotas_tipo = models.CharField(_("Tipo de cuotas"), max_length=10, choices=CUOTA_TIPOS)
     fecha_inicio = models.DateField(_("Fecha de inicio"), default=timezone.now)
     fecha_creacion = models.DateTimeField(_("Fecha de creación"), auto_now_add=True)
-    # Fields automáticas.
+    tags = models.CharField(max_length=200, blank=True)
 
 
     class Meta:
@@ -130,5 +130,20 @@ class Prestamo(models.Model, PrestamoBase):
             return "{} {}".format(_("Préstamo"), self.cuenta.numero)
         except BaseException:
             return "{} {} {}".format("Préstamo", self.cuenta, self.cliente)
+
+
+    def save(self, *args, **kwargs):
+        """
+        Método llamado cuando se crea o modifica.
+        """
+        # Creamos la cuenta. La cuenta debe crearse automáticamente, ya que 
+        # es tratada como una cuenta interna para poder llevar a cabo las 
+        # operaciones de transacciones. El usuario no tiene que saber esto.
+        cuenta = Cuenta()
+        cuenta.numero = cuenta.GetNextNumber()
+        cuenta.cliente = self.cliente
+        cuenta.save() 
+        self.cuenta = cuenta
+        super().save(*args, **kwargs)
 
     

@@ -20,6 +20,8 @@ except BaseException:
 
 
 
+PRIMER_NUMERO_DE_CUENTA = "10221110"
+PRIMER_NUMERO_DE_CLIENTE = "10102020"
 
 
 
@@ -136,15 +138,19 @@ FLOAT = "FLOAT"
 DECIMAL = "DECIMAL"
 STR = "STR"
 BOOL = "BOOL"
+DATE = "DATE"
+DATETIME = "DATETIME"
 TIPO_DE_DATOS_CHOICES = (
-    (STR, "Texto"),
-    (INT, "Número entero."),
-    (FLOAT, "Número de coma flotante."),
-    (DECIMAL, "Número decimal"),
-    (TUPLE, "Tupla"),
-    (LIST, "Lista"),
-    (DICT, "Diccionario"),
-    (BOOL, "Falso/Verdadero")
+    (STR, _("Texto")),
+    (INT, _("Número entero.")),
+    (FLOAT, _("Número de coma flotante.")),
+    (DECIMAL, _("Número decimal")),
+    (TUPLE, _("Tupla")),
+    (LIST, _("Lista")),
+    (DICT, _("Diccionario")),
+    (BOOL, _("Falso o Verdadero")),
+    (DATE, _("Fecha")),
+    (DATETIME, _("Fecha y hora")),
 )
 
 

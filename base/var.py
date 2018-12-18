@@ -1,4 +1,4 @@
-"""
+﻿"""
 Módulo para la declaración de las variables globales 
 comunes para todo el  proyecto.
 """
@@ -75,7 +75,7 @@ APLICATIONS = (
 
 # Imagenes que se encuentran en la carpeta static del proyecto.
 # Imagenes principales:
-IMG_LOGO = STATIC_URL + "base/img/logo1.svg"
+IMG_LOGO = STATIC_URL + "base/img/logo1.png"
 IMG_LOGO_ICON = STATIC_URL + "base/img/logo_icon.png" # imágen que se muestra en la pestaña del navegador.
 IMG_DEFAULT = IMG_LOGO
 IMG_HOME = IMG_DEFAULT
