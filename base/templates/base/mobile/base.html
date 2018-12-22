@@ -109,6 +109,32 @@
          </script>
 
 
+         {# Motor de busqueda de Google #}
+            <div style="margin-left: 10px; margin-right: 10px;" class="subtitleimg">
+                  <script>
+                     (function() {
+                        var cx = 'partner-pub-6132554739848284:5041244397';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                     })();
+                  </script>
+                  
+               <style>
+                  #___gcse_0 * {
+                     font-size: 45px;
+                  }
+
+               </style>
+               <gcse:searchbox-only></gcse:searchbox-only>
+            </div>
+            {# End motor de busqueda de Google #}
+            <br>
+
+
 
          {% block header %}
          {% endblock header %}
@@ -117,6 +143,9 @@
          
 
       <div id="content">
+
+            
+
          <div class="subtitle">
             <img class="subtitleimg" src="{{ subtitleimg }}" alt="">
             <div class="subtitletexto">{{ subtitle }}</div>
